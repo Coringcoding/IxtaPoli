@@ -1,0 +1,30 @@
+#body{
+    background-image: url("../img/fondoCoordinador.jpg");
+}
+#actividadForm{
+    position: absolute;
+    top:10%;
+    left:14%;
+    width: 70%;
+    height: 110%;
+    background-color: #ffffff;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+}
+#contenido{
+    position:relative;
+    top:6%;
+    
+}
+#botonEnviar{
+    position: relative;
+    left:76%;
+    top: 90%;
+    background-color: #880000;
+}
+
+#nav{
+    background-color: #880000;
+    text-align: center;
+}

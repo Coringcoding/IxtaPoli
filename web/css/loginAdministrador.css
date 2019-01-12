@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9/11/2018, 12:02:53 PM
+    Author     : Alumno
+*/
+
+body{
+    background-image: url("../img/fondoCoordinador.jpg") ;
+    background-size: cover;
+
+}
+
+nav{
+    background-color: #880000;
+}
+
+#formLoginA{
+    background-color: #EEEEEE;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    height: 50%;
+    width: 30%;
+    border-radius: 10px;
+    
+}
+
+.input-field input[type=text]:focus + label{
+ color: #880000 !important;
+}
+
+.input-field input[type=text]:focus, .input-field input[type=number]:focus, .input-field input[type=password]:focus{
+ border-bottom: 1px solid #880000 !important;
+ box-shadow: 0 1px 0 0 #880000 !important;
+}
+label{
+    color: black !important;
+}
+
+
+input[type=text],input[type=password], input[type=number]{
+    border-color: #880000 !important;
+}
+
+div{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+label{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+button{
+    position: absolute !important;
+    right: 10%;
+    top: 80%;
+}   
+
+#linkLoginA{
+    color: #A93226;
+    position: absolute;
+    top:80%;
+    left:10%;
+}
+
+ body {
+    display: flex;
+    min-height: 110vh;
+    flex-direction: column;
+    
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      
+  footer{
+      background-color: grey;
+  }
