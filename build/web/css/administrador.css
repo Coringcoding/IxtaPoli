@@ -1,15 +1,24 @@
 body{
     background-image: url("../img/fondoCoordinador.jpg");
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+main {
+    flex: 1 0 auto;
+  }
+   .row:after{
+      display: none;
+  }
+  footer{
+      background-color: #880000; 
+  }
+  
 #formregistro{
     background-color: #EEEEEE;
-    position: absolute;
-    top: 15%;
-    left: 40%;
-    height: 110%;
-    width: 30%;
     border-radius: 10px;
-    
+    position: relative;
+    top: 2vw;
 }
 .input-field input[type=text]:focus + label{
  color: #880000 !important;
@@ -31,20 +40,23 @@ input[type=text],input[type=password], input[type=number]{
     font-size: 3vw;
     text-align: center;
 }
-div{
-    padding-left: 10%;
-    padding-right: 10%;
+main>div>form>div{
+    padding-left: 5%;
+    padding-right: 5%;
 }
 label{
     padding-left: 10%;
     padding-right: 10%;
 }
-button{
-    position: absolute !important;
-    right: 10%;
-}   
+
 #validacion{
    position: absolute;
    right: 10%;
    top: -10%;
+}
+nav{
+    background-color: #880000;
+}
+a{
+    color: #880000;
 }

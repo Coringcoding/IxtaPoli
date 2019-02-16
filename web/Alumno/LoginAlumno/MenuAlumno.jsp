@@ -17,30 +17,27 @@
     </div>
     </nav>
         
-      <div class="row" id="imaqgenes" style="position:absolute;height:auto;margin-right: auto;margin-left: auto;margin-top: 10%;">
+        
+        <div class="row" id="imagenes">
             
-            <div id="contenido" class="col s3">
-                <a style="margin-left: 35%; font-family: sans-serif;color: white;font-size: 20px" href="../../Alumno/Calendario/Calendario.jsp"><img class="circle responsive-img" src="../../img/calendario.jpg" alt=""/>
-                Calendario</a>
-            </div>
-            <div class="col s2">
-              
-            </div>
-            <div id="contenido" class="col s2">
-                <a style="font-size: 15px;font-family: sans-serif;color: white;font-size: 20px" href="../../Coordinador/Actividades/Actividades.jsp"> <img class="circle responsive-img" src="../../img/equipos.jpg" alt=""/>
-                 Faena</a><!--Es equipos-->            
-            </div>
-            <div class="col s2">
-                
-            </div>
-            <div id="contenido" class="col s3">
-                <img class="circle responsive-img" src="../../img/recorrido.jpg" alt=""/>
-                <a style="margin-left: 16%;font-family: sans-serif;color: white;font-size: 20px">Seguimiento de Recorrido</a>
-            </div>
-          
-          
-          
-      </div>  
+            <a href="../../Alumno/Calendario/Calendario.jsp">
+            <div id="calendario" class="col l3">
+                    <img class="responsive-img" src="../../img/calendario.jpg" alt="">
+                Calendario
+            </div></a>
+           
+          <a href="../../Coordinador/Actividades/Actividades.jsp">
+              <div id="faena" class="col l3 offset-l1">
+                    <img class="responsive-img" src="../../img/equipos.jpg" alt="">
+                 Faena            
+            </div></a><!--Es equipos-->
+            
+            <a href=""><div id="seguimiento" class="col l3 offset-l1">
+                    <img class="responsive-img" src="../../img/recorrido.jpg" alt="">
+                Seguimiento de Recorrido
+                </div></a>
+      </div>
+        
         <a href="../../Coordinador/Reportes/GenerarReporte.jsp">Coordinador: Generar Reporte</a>
          <script src="../../js/jquery-3.3.1.min.js"></script>
          <script src="../../js/materialize.min.js"></script>

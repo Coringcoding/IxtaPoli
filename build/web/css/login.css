@@ -1,18 +1,20 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 9/11/2018, 10:14:51 AM
-    Author     : Alumno
-*/
-
 body{
     background-image: url("../img/fondoCoordinador.jpg") ;
     background-size: cover;
-
-}
+    font-family: roboto;
+    display: flex;
+    min-height: 110vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+   .row:after{
+      display: none;
+  }
+  footer{
+      background-color: #880000; 
+  }
 #administradorL{
     text-align: center;
     position: absolute;
@@ -35,22 +37,20 @@ body{
 }
 
 #tituloA{
-    
     color:white;
     top:70%;
     position: absolute;
-    left:33%;
+    left:25%;
     background-color: #880000;
     margin-bottom: 10px;
     
 }
 
 #tituloB{
-    
     color:white;
     top:70%;
     position: absolute;
-    left: 39%;
+    left: 35%;
     background-color: #880000;
     
 }
@@ -78,18 +78,10 @@ background: rgba(236, 240, 241);
 color:#D0D3D4    ;
 box-shadow: inset 0 0 0 3px ;
 }
-
-  body {
-    display: flex;
-    min-height: 110vh;
-    flex-direction: column;
-    
+  
+  #logo{
+      margin-top: 20px;
+      height: 6vw;
+      width: 6vw;
   }
-
-  main {
-    flex: 1 0 auto;
-  }
-      
-  footer{
-      background-color: grey;
-  }
+ 

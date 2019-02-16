@@ -28,3 +28,17 @@
     background-color: #880000;
     text-align: center;
 }
+#imagenes{
+    position:absolute;
+    margin-top: 10%;
+    margin-left: 5vw;
+}
+img{
+    border-radius: 50%;
+}
+a{
+    font-family: sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

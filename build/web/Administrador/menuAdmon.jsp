@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menuAdmon
-    Created on : 13/11/2018, 02:14:15 PM
-    Author     : Alumno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
