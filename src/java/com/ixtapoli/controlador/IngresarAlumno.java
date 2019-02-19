@@ -27,10 +27,15 @@ public class IngresarAlumno extends HttpServlet {
         try {
             alumnoImpDao n = new alumnoImpDao();
             boolean marca = n.iniciarSesion(s);
-            if (marca == true) {
+            int estado = n.obtenerEstado(s.getUsr());
+            if (marca == true && estado == 0) {
+                response.sendRedirect("Alumno/LoginAlumno/Espera.jsp");
+            }else if(marca == true && estado == 1) {
                 response.sendRedirect("Alumno/LoginAlumno/MenuAlumno.jsp");
+            }else if(marca == true && estado == 2) {
+                response.sendRedirect("Alumno/LoginAlumno/Rechazado.jsp");
             }else
-                response.sendRedirect("Alumno/LoginAlumno/RegistrarAlumno.jsp");
+                response.sendRedirect("Alumno/LoginAlumno/RegistrarAlumno.jsp?msj=6OR6wwKavbbw91rFr2krlmey2TQKZzopgeuPU+Z0o7rt3OSOoO0jLdnL7QPuIDHVjXp8lMFDYdgjHUAEDh3QOQ");
         } catch (Exception e) {
             e.printStackTrace();
         }

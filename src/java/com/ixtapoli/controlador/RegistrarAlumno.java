@@ -43,11 +43,11 @@ public class RegistrarAlumno extends HttpServlet {
             n.registrarse(s);
             
             System.out.println("<script>alert('Alumno Registrado');</script>");
-            response.sendRedirect("Alumno/LoginAlumno/LoginAlumno.jsp");
+            response.sendRedirect("Alumno/LoginAlumno/LoginAlumno.jsp?msj=E4/0McbWmd+2F85Nfvgq2r0wiV4fAwfa5nG0E7KLKA+uV9gulgAT57gVC9iIHSu/dGRX4XYSPrIPixxa0W3Wrg");
             
         } catch (Exception e) {
             System.out.println("<script>alert('Error en registro');</script>");
-            response.sendRedirect("Alumno/LoginAlumno/RegistrarAlumno.jsp");
+            response.sendRedirect("Alumno/LoginAlumno/RegistrarAlumno.jsp?msj=Db2Jr0UKPKdnlhF1sgfsVAVsosYzX4d1KhzraA2to2GR5zG5isD4hfL/einIP18n9FnEumOr1zQzhE2SVmFnIQ");
             e.printStackTrace();
         }
         

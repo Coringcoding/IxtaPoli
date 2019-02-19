@@ -72,6 +72,7 @@ BEGIN
 	declare idR int;
     declare idRelRut int;
     declare existe int;
+    declare idS int;
 	if accion = 1 then
 		set existe = (select count(*) from alumno where usuario = us);
         if existe = 0 then
@@ -82,7 +83,10 @@ BEGIN
 			insert into relAlumnoTipoUs values (idR, idAl, 0); /*0 es alumno normal, 1 es coordinador*/
 			/*relacion alumno bus*/
 			set idRelRut = (select ifnull(max(idRelAlumnoBus), 0) from relAlumnoBus) + 1;
+            set idS = (select ifnull(max(idSolicitud), 0) from solicitud) + 1;
 			insert into relAlumnoBus values(idRelRut, idAl, rut);
+            -- Guarda la solicitud para que se muestre al administrador con estado 0
+            insert into solicitud values(idS, nom, pat, mat, esc, domi, prom, us, md5(contra), rut, 0);
             select 'true' as msj;
         else
 			select 'false' as msj;
@@ -108,6 +112,13 @@ drop procedure if exists IniciarSesionAlumno**
 create procedure IniciarSesionAlumno(in usr nvarchar(20), in contra nvarchar(20))
 BEGIN	
 	select count(idAlumno) as existe from alumno where usuario = usr and contrasenia = md5(contra);
+END**
+
+-- Obtener estado del Alumno J --
+drop procedure if exists ObtenerEstado**
+create procedure ObtenerEstado(in usr nvarchar(20))
+BEGIN	
+	select estado from solicitud where usuario = usr;
 END**
 
 /* Iniciar sesion Administrador */

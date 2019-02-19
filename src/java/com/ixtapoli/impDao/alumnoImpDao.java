@@ -24,6 +24,7 @@ public class alumnoImpDao implements iAlumnoDao {
 	final String EDITARALUMNO = "{CALL Usuario(3,,?,?,?,?,?,?,?,?,?,?,?)}";
         final String CONSULTARFAENAS = "{CALL faena(4,0,'','0000-00-00','','','','',0)}";
         final String INICIARSESION = "{CALL IniciarSesionAlumno(?,?)}";
+        final String OBTENERESTADO = "{CALL ObtenerEstado(?)}";
         	
 	public alumnoImpDao() {
 		
@@ -217,6 +218,29 @@ public class alumnoImpDao implements iAlumnoDao {
     @Override
     public boolean validarUsuario(String ad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int obtenerEstado(String s) {
+        CallableStatement st = null;
+        ResultSet rs = null;
+        int estado = -1;
+
+        try {
+
+            st = cnx.getConexion().prepareCall(OBTENERESTADO);
+            st.setString(1, s);
+            
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+                estado = rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return estado;
     }
 
 }

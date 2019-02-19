@@ -27,6 +27,22 @@ CREATE table alumno (
     estatus boolean not null
 );
 
+-- Sirve para el registro de alumno nuevo J --
+-- Estado: 0 En espera 1 Aceptado 2 Rechazado J --
+create table solicitud (
+	idSolicitud int primary key,
+	nombre nvarchar(45) not null,
+    paterno nvarchar(45) not null,
+    materno nvarchar(45) not null, 
+    escuela nvarchar(45) not null,
+    domicilio nvarchar(100) not null,
+	promedio float not null,
+    usuario nvarchar(45) not null,
+    contrasenia nvarchar(45) not null,
+    ruta int not null, /*Estaria escogiendo el bus*/
+    estado int not null
+);
+
 create table faena (
 	idFaena int primary key,
     nombre nvarchar(45) not null,

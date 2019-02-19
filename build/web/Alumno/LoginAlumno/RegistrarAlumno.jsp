@@ -1,5 +1,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+
+    try {            
+            if(request.getParameter("msj").equals("6OR6wwKavbbw91rFr2krlmey2TQKZzopgeuPU Z0o7rt3OSOoO0jLdnL7QPuIDHVjXp8lMFDYdgjHUAEDh3QOQ")) {
+                out.print("<script>alert('Informacion incorrecta');</script>");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+%>
 <html>
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -68,7 +79,7 @@
         <script>            
             $(document).ready(function(){
                 $('select').formSelect();
-            })            
+            });           
         </script>
     </body>
 </html>

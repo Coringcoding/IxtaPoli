@@ -76,3 +76,32 @@ h4{
 buttom{
       width: 3vw;
   }
+  
+.degradado{
+    background: #CB356B;
+    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+    background: linear-gradient(to right, #BD3F32, #CB356B);
+}
+
+.degradado2{
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+}
+
+.espacio3{
+    padding-top: 4vw;
+}
+
+.img1{
+    width: 20vw;
+    height: 20vh;
+}
+
+/*.bg-dark{    
+    background-image: url("../img/fondoCoordinador.jpg") ;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}*/

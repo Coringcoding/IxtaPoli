@@ -1,5 +1,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+
+    try {
+            if(request.getParameter("msj").equals("E4/0McbWmd 2F85Nfvgq2r0wiV4fAwfa5nG0E7KLKA uV9gulgAT57gVC9iIHSu/dGRX4XYSPrIPixxa0W3Wrg")) {
+                out.print("<script>alert('Solicitud enviada');</script>");
+            }else if(request.getParameter("msj").equals("Db2Jr0UKPKdnlhF1sgfsVAVsosYzX4d1KhzraA2to2GR5zG5isD4hfL/einIP18n9FnEumOr1zQzhE2SVmFnIQ")) {
+                out.print("<script>alert('Error en envío de solicitud');</script>");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+%>
 <html>
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -53,6 +66,6 @@
         </footer>
         
         <script type="text/javascript" src="../../js/materialize.min.js"></script>
-        <script type="text/javascript" src="../../js/jquery-3.3.1.min.js">
+        <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
     </body>
 </html>
