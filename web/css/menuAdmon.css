@@ -1,13 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 17/11/2018, 03:24:49 PM
-    Author     : olive
-*/
-
 body{
     background-image: url("../img/fondoCoordinador.jpg") ;
     background-size: cover;
@@ -15,41 +5,27 @@ body{
     min-height: 110vh;
     flex-direction: column;
 }
-
 nav{
     background-color: #880000;
 }
-
   main {
     flex: 1 0 auto;
   }
-      
   footer{
-      background-color: grey;
+      background-color: #880000;
   }
    
-  #imagen{
-      
-      height: 25%;
-      width: 25%;
-      border-radius: 50%;
-  }
-  
-  #alta{
-      position: absolute;
-      color: black;
-      left:10%;
-      
-  }
-  
-  #cambio{
-      position: absolute;
-      color: black;
-      left:40%;
-  }
-  
-  #baja{
-      position: absolute;
-      color: black;
-      left:60%;
-  }
+  #imagenes{
+    position:absolute;
+    margin-top: 20vw;
+    margin-left: 5vw;
+}
+img{
+    
+}
+a{
+    font-family: sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}   

@@ -8,9 +8,7 @@ import com.ixtapoli.modelo.Solicitud;
 
 public interface iAdministradorDao extends Dao<Administrador>{
 
-	public boolean aceptarSolicitud(Solicitud s);
-	
-	public boolean rechazarSolicitud(Solicitud s);
+	public boolean CambiarSolicitud(int idS, int Es);
 	
 	public List<Solicitud> consultarSolicitudes();
         

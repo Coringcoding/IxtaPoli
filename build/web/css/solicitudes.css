@@ -1,0 +1,21 @@
+body{
+    background-image: url("../img/fondoCoordinador.jpg") ;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+    padding-top: 5vw;
+  }
+  .row:after{
+      display: none;
+  }
+
+nav{
+    background-color: #880000;
+}
+table{
+    background-color: #F1F1F1;
+}

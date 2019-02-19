@@ -22,24 +22,60 @@ public class administradorImpDao implements iAdministradorDao{
     final String VALIDARADMINISTRADOR = "{CALL ValidarAdministrador(?)}";
     final String CONSULTARALUMNOS="{CALL Usuario(4,?,'','','','','',0,'','',0,false)}";
     final String ACTUALIZARDATOS="{CALL Usuario(3,?,?,?,?,?,?,?,?,?,0,false)}";
+    final String CONSULTARSOLICITUDES = "{CALL Solicitudes(0,3)}";
+    final String CAMBIARSOLICITUD = "{CALL Solicitudes(?,?)}";
 
     public administradorImpDao(){
         cnx = new Conexion();
     }
-    
-    @Override
-    public boolean aceptarSolicitud(Solicitud s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
-    public boolean rechazarSolicitud(Solicitud s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean CambiarSolicitud(int idS, int Es){
+        boolean bandera = false;
+        CallableStatement st;
+        try{
+            st = cnx.getConexion().prepareCall(CAMBIARSOLICITUD);
+            st.setInt(1, idS);
+            st.setInt(2, Es);
+            st.executeQuery();
+            bandera = true;
+        }catch(Exception e){
+            System.out.println("Error al cambiar solicitud Alumno");
+            e.printStackTrace();
+        }
+        return bandera;
     }
 
     @Override
     public List<Solicitud> consultarSolicitudes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ResultSet res;
+        CallableStatement st;
+        List<Solicitud> solicitudes = new ArrayList();
+        
+        try{
+            st = cnx.getConexion().prepareCall(CONSULTARSOLICITUDES);
+            res = st.executeQuery();
+            while(res.next()){
+                int estado = res.getInt("estado");
+                if(estado == 0){
+                Solicitud s = new Solicitud();
+                s.setIdSolicitud(res.getLong("idSolicitud"));
+                s.setNombre(res.getString("nombre"));
+                s.setPaterno(res.getString("paterno"));
+                s.setMaterno(res.getString("materno"));
+                s.setEscuela(res.getString("escuela"));
+                s.setPromedio(res.getFloat("promedio"));
+                s.setDomicilio(res.getString("domicilio"));
+                s.setUsr(res.getString("usuario"));
+                s.setRuta(0);res.getString("ruta");
+                solicitudes.add(s);
+                }
+            }
+        }catch(Exception e){
+            System.out.println("Error al consultar solicitudes");
+            e.printStackTrace();
+        }
+        return solicitudes;
     }
 
     @Override

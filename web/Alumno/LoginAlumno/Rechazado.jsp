@@ -24,6 +24,9 @@
                             <div class="center-align">
                                 <img class="responsive-img img1" src="../../img/ixtapoliVirtual.png">
                             </div>
+                            <a href="LoginAlumno.jsp" class="btn waves-effect waves-light red darken-4 col l6  offset-l2" type="submit" name="action">
+                            Regresar<i class="material-icons right">arrow_back</i>
+                            </a>
                             <p class="right-align">Atte. Equipo de Ixtapoli</p>
                         </div>
                     </div>

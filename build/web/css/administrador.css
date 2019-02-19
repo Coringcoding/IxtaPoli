@@ -20,6 +20,14 @@ main {
     position: relative;
     top: 2vw;
 }
+
+#formregistroAl{
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    position: relative;
+    top: 1vw;
+}
+
 .input-field input[type=text]:focus + label{
  color: #880000 !important;
 }
@@ -38,6 +46,10 @@ input[type=text],input[type=password], input[type=number]{
 
 #nam{
     font-size: 3vw;
+    text-align: center;
+}
+#namA{
+    font-size: 2    vw;
     text-align: center;
 }
 main>div>form>div{

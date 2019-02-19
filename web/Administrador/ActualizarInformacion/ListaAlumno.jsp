@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../../css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/solicitudes.css">
         <title>Alumnos</title>
         <%
             List<Alumno> al = new ArrayList();
@@ -47,6 +48,12 @@
             };
         </script>
         
+        <nav>
+            <a href="#" class="brand-logo left">Actualizar Informacion</a>
+      </nav>
+        
+        <main>
+        
         <div class="container">
         <table class="highlight centered"><thead>
             <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>
@@ -70,6 +77,7 @@
                 <input type="hidden" id="idAl" name="idAlumno">
             </form>
             
+        </main>            
              <script src="../../js/jquery-3.3.1.min.js"></script>
         <script src="../../js/materialize.min.js"></script>
         <script>

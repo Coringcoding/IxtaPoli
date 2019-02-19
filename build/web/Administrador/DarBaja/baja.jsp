@@ -13,9 +13,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../../css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/solicitudes.css">
         <title>Dar de Baja</title>
     </head>
     <body>
+        <nav>
+            <a href="#" class="brand-logo left">Dar de Baja </a>
+      </nav>
+        <main>
+        
         <%
          boolean btn;
             btn = (request.getParameter("bot") != null)?true:false;
@@ -69,12 +75,13 @@
             </tbody>
         </table>
             </div>
-            
             <form method="get" name="reporte" id="reporte" action="">
             <input type="hidden" name="idAlumno" id="idAlumno">
             <input type="hidden" name="idReporte" id="idReporte">
             <input type="hidden" name="bot" id="bot" value="">
         </form>
+            
+        </main>
             
         <script src="../../js/jquery-3.3.1.min.js"></script>
         <script src="../../js/materialize.min.js"></script>

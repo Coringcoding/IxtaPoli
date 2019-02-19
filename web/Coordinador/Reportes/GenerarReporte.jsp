@@ -12,9 +12,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../../css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/solicitudes.css">
         <title>Generar Reporte</title>
     </head>
     <body>
+        <nav>
+            <a href="#" class="brand-logo left">Generar Reporte</a>
+      </nav>
+        
+        <main>
+        
         <%
          boolean btn;
             btn = (request.getParameter("bot") != null)?true:false;
@@ -63,6 +70,8 @@
             <input type="hidden" name="idReporte" id="idReporte">
             <input type="hidden" name="bot" value="reportar">
         </form>
+            
+        </main>
             
         <script src="../../js/jquery-3.3.1.min.js"></script>
         <script src="../../js/materialize.min.js"></script>

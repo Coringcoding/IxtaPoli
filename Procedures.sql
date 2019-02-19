@@ -301,4 +301,23 @@ BEGIN
     end if;
 	
 END**
+
+delimiter **
+drop procedure if exists Solicitudes**
+create procedure Solicitudes(
+in idSol int,
+in es int
+)
+BEGIN
+/*estado 0 en espera, 1 aceptado, 2 rechazado, 3 consultar solicitudes*/
+	
+    if es  = 1 or es =2 then
+		update solicitud set estado = es where idSolicitud = idSol;
+    elseif es = 3 then
+		select * from solicitud;
+    end if;
+
+END**
+
+
 delimiter ;
