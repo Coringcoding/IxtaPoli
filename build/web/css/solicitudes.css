@@ -14,7 +14,7 @@ main {
   }
 
 nav{
-    background-color: #880000;
+   background: linear-gradient(to right, #880000, #190a05);
 }
 table{
     background-color: #F1F1F1;

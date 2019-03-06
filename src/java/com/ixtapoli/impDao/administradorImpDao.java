@@ -20,8 +20,8 @@ public class administradorImpDao implements iAdministradorDao{
     final String REGISTRARADMINISTRADOR = "{CALL Administrador(1,0,?,?,?,?,?,?,?)}";
     final String INICIARSESION = "{CALL IniciarSesionAdmin(?,?)}";
     final String VALIDARADMINISTRADOR = "{CALL ValidarAdministrador(?)}";
-    final String CONSULTARALUMNOS="{CALL Usuario(4,?,'','','','','',0,'','',0,false)}";
-    final String ACTUALIZARDATOS="{CALL Usuario(3,?,?,?,?,?,?,?,?,?,0,false)}";
+    final String CONSULTARALUMNOS="{CALL Usuario(4,?,'','','','','',0,'','',0)}";
+    final String ACTUALIZARDATOS="{CALL Usuario(3,?,?,?,?,?,?,?,?,?,0)}";
     final String CONSULTARSOLICITUDES = "{CALL Solicitudes(0,3)}";
     final String CAMBIARSOLICITUD = "{CALL Solicitudes(?,?)}";
 
@@ -56,10 +56,10 @@ public class administradorImpDao implements iAdministradorDao{
             st = cnx.getConexion().prepareCall(CONSULTARSOLICITUDES);
             res = st.executeQuery();
             while(res.next()){
-                int estado = res.getInt("estado");
-                if(estado == 0){
+                String estado = res.getString("estatus");
+                if(estado.equalsIgnoreCase("Espera")){
                 Solicitud s = new Solicitud();
-                s.setIdSolicitud(res.getLong("idSolicitud"));
+                s.setIdSolicitud(res.getLong("idRelEstadoAlumno"));
                 s.setNombre(res.getString("nombre"));
                 s.setPaterno(res.getString("paterno"));
                 s.setMaterno(res.getString("materno"));
@@ -87,7 +87,10 @@ public class administradorImpDao implements iAdministradorDao{
             st = cnx.getConexion().prepareCall(CONSULTARALUMNOS);
             st.setInt(1, idA);
             res = st.executeQuery();
+            String estatus = "";
             while(res.next()){
+                estatus = res.getString("estatus");
+                if(estatus.equalsIgnoreCase("Aceptado")){
                 Alumno a = new Alumno();
                 a.setId(res.getLong("idAlumno"));
                 a.setNombre(res.getString("nombre"));
@@ -101,6 +104,7 @@ public class administradorImpDao implements iAdministradorDao{
                 a.setRutaS(res.getString("ruta"));
                 a.setRuta(res.getInt("idRuta"));
                 al.add(a);
+                }
             }
             
         }catch(Exception e){

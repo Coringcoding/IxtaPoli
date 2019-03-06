@@ -11,7 +11,7 @@ main {
       display: none;
   }
   footer{
-      background-color: #880000; 
+      background: linear-gradient(to right, #880000, #190a05);
   }
   
 #formregistro{
@@ -67,8 +67,11 @@ label{
    top: -10%;
 }
 nav{
-    background-color: #880000;
+    background: linear-gradient(to right, #880000, #190a05);
 }
 a{
     color: #880000;
+}
+button{
+    background: linear-gradient(to right, #880000, #190a05);
 }

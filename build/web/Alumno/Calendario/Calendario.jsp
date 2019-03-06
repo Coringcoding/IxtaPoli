@@ -16,8 +16,7 @@
     <body>
         <nav>
         <div class="#d32f2f red darken-2">
-            <a href="../LoginAlumno/MenuAlumno.jsp" class="brand-logo">Ixtapoli</a>
-            
+            <a href="../LoginAlumno/MenuAlumno.jsp" class="brand-logo">Calendario de Actividades</a>
         </div>
       </nav>        
             <div id="calendar"></div>

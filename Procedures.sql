@@ -64,29 +64,28 @@ create procedure Usuario(
  in	prom float,
  in us nvarchar(45),
  in contra nvarchar(45),
- in rut int,
- in estat boolean
-)
+ in rut int
+ )
 BEGIN
 /*1 registrar, 2 eliminar, 3 editar, 4 consultar*/
 	declare idR int;
     declare idRelRut int;
     declare existe int;
-    declare idS int;
+    declare idE int;
 	if accion = 1 then
 		set existe = (select count(*) from alumno where usuario = us);
         if existe = 0 then
 			set idAl = (select ifnull(max(idAlumno), 0) from alumno) + 1;
-			insert into alumno values(idAl, nom, pat, mat, esc, domi, prom, us, md5(contra), rut, estat);
+			insert into alumno values(idAl, nom, pat, mat, esc, domi, prom, us, md5(contra), rut);
 			/*Relacion alumno tipo usuario*/
 			set idR = (select ifnull(max(idRelAlumnoTipoUs), 0) from relAlumnoTipoUs) + 1;
 			insert into relAlumnoTipoUs values (idR, idAl, 0); /*0 es alumno normal, 1 es coordinador*/
 			/*relacion alumno bus*/
 			set idRelRut = (select ifnull(max(idRelAlumnoBus), 0) from relAlumnoBus) + 1;
-            set idS = (select ifnull(max(idSolicitud), 0) from solicitud) + 1;
 			insert into relAlumnoBus values(idRelRut, idAl, rut);
             -- Guarda la solicitud para que se muestre al administrador con estado 0
-            insert into solicitud values(idS, nom, pat, mat, esc, domi, prom, us, md5(contra), rut, 0);
+            set idE = (select ifnull(max(idRelEstadoAlumno),0) from relEstadoAlumno) +1;
+            insert into relEstadoAlumno values(idE, idAl, 0);
             select 'true' as msj;
         else
 			select 'false' as msj;
@@ -118,7 +117,7 @@ END**
 drop procedure if exists ObtenerEstado**
 create procedure ObtenerEstado(in usr nvarchar(20))
 BEGIN	
-	select estado from solicitud where usuario = usr;
+	select estatus from solicitud where usuario = usr;
 END**
 
 /* Iniciar sesion Administrador */
@@ -305,19 +304,17 @@ END**
 delimiter **
 drop procedure if exists Solicitudes**
 create procedure Solicitudes(
-in idSol int,
+in idS int,
 in es int
 )
 BEGIN
 /*estado 0 en espera, 1 aceptado, 2 rechazado, 3 consultar solicitudes*/
-	
     if es  = 1 or es =2 then
-		update solicitud set estado = es where idSolicitud = idSol;
+		update relEstadoAlumno set idEstado = es where idRelEstadoAlumno = idS;
     elseif es = 3 then
 		select * from solicitud;
     end if;
 
 END**
-
 
 delimiter ;

@@ -81,7 +81,7 @@
         
         <div class="row">
         <table class="highlight centered col l8 offset-l2"><thead>
-            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>
+                <tr><th>Nombre</th><th>Paterno</th><th>Materno</th><th></th></tr>
             </thead>
             <tbody>
             <%

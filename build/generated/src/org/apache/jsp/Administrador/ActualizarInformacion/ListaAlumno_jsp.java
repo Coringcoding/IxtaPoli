@@ -57,6 +57,7 @@ public final class ListaAlumno_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/materialize.min.css\">\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/solicitudes.css\">\n");
       out.write("        <title>Alumnos</title>\n");
       out.write("        ");
 
@@ -96,6 +97,12 @@ public final class ListaAlumno_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            };\n");
       out.write("        </script>\n");
       out.write("        \n");
+      out.write("        <nav>\n");
+      out.write("            <a href=\"#\" class=\"brand-logo left\">Actualizar Informacion</a>\n");
+      out.write("      </nav>\n");
+      out.write("        \n");
+      out.write("        <main>\n");
+      out.write("        \n");
       out.write("        <div class=\"container\">\n");
       out.write("        <table class=\"highlight centered\"><thead>\n");
       out.write("            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>\n");
@@ -121,6 +128,7 @@ public final class ListaAlumno_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <input type=\"hidden\" id=\"idAl\" name=\"idAlumno\">\n");
       out.write("            </form>\n");
       out.write("            \n");
+      out.write("        </main>            \n");
       out.write("             <script src=\"../../js/jquery-3.3.1.min.js\"></script>\n");
       out.write("        <script src=\"../../js/materialize.min.js\"></script>\n");
       out.write("        <script>\n");

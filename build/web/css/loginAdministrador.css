@@ -13,7 +13,7 @@ main {
   }
 
 nav{
-    background-color: #880000;
+    background: linear-gradient(to right, #880000, #190a05);
 }
 
 #formLoginA{
@@ -63,7 +63,7 @@ label{
     padding-bottom: .5vw;
 }
 footer{
-      background-color: #880000;
+      background: linear-gradient(to right, #880000, #190a05);
   }
 #logo{
       margin-top: 20px;
@@ -97,7 +97,9 @@ buttom{
     width: 20vw;
     height: 20vh;
 }
-
+button{
+background: linear-gradient(to right, #880000, #190a05);
+}
 /*.bg-dark{    
     background-image: url("../img/fondoCoordinador.jpg") ;
     background-size: cover;

@@ -27,12 +27,12 @@ public class IngresarAlumno extends HttpServlet {
         try {
             alumnoImpDao n = new alumnoImpDao();
             boolean marca = n.iniciarSesion(s);
-            int estado = n.obtenerEstado(s.getUsr());
-            if (marca == true && estado == 0) {
+            String estatus = n.obtenerEstado(s.getUsr());
+            if (marca == true && estatus.equalsIgnoreCase("espera")) {
                 response.sendRedirect("Alumno/LoginAlumno/Espera.jsp");
-            }else if(marca == true && estado == 1) {
+            }else if(marca == true && estatus.equalsIgnoreCase("Aceptado")) {
                 response.sendRedirect("Alumno/LoginAlumno/MenuAlumno.jsp");
-            }else if(marca == true && estado == 2) {
+            }else if(marca == true && estatus.equalsIgnoreCase("Rechazado")) {
                 response.sendRedirect("Alumno/LoginAlumno/Rechazado.jsp");
             }else
                 response.sendRedirect("Alumno/LoginAlumno/RegistrarAlumno.jsp?msj=6OR6wwKavbbw91rFr2krlmey2TQKZzopgeuPU+Z0o7rt3OSOoO0jLdnL7QPuIDHVjXp8lMFDYdgjHUAEDh3QOQ");

@@ -64,9 +64,15 @@ public final class baja_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">\r\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/materialize.min.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/solicitudes.css\">\r\n");
       out.write("        <title>Dar de Baja</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
+      out.write("        <nav>\r\n");
+      out.write("            <a href=\"#\" class=\"brand-logo left\">Dar de Baja </a>\r\n");
+      out.write("      </nav>\r\n");
+      out.write("        <main>\r\n");
+      out.write("        \r\n");
       out.write("        ");
 
          boolean btn;
@@ -129,6 +135,8 @@ public final class baja_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <input type=\"hidden\" name=\"idReporte\" id=\"idReporte\">\r\n");
       out.write("            <input type=\"hidden\" name=\"bot\" id=\"bot\" value=\"\">\r\n");
       out.write("        </form>\r\n");
+      out.write("            \r\n");
+      out.write("        </main>\r\n");
       out.write("            \r\n");
       out.write("        <script src=\"../../js/jquery-3.3.1.min.js\"></script>\r\n");
       out.write("        <script src=\"../../js/materialize.min.js\"></script>\r\n");

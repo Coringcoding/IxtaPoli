@@ -54,3 +54,6 @@ body{
 .fc-toolbar button{
     height: 13.5%; /*La altura de los botones*/
 }
+nav{
+    background: linear-gradient(to right, #880000, #b20a2c);
+}

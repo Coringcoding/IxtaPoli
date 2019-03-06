@@ -23,24 +23,24 @@ CREATE table alumno (
 	promedio float not null,
     usuario nvarchar(45) not null,
     contrasenia nvarchar(45) not null,
-    ruta int not null, /*Estaria escogiendo el bus*/
-    estatus boolean not null
+    ruta int not null /*Estaria escogiendo el bus*/    
 );
 
--- Sirve para el registro de alumno nuevo J --
--- Estado: 0 En espera 1 Aceptado 2 Rechazado J --
-create table solicitud (
-	idSolicitud int primary key,
-	nombre nvarchar(45) not null,
-    paterno nvarchar(45) not null,
-    materno nvarchar(45) not null, 
-    escuela nvarchar(45) not null,
-    domicilio nvarchar(100) not null,
-	promedio float not null,
-    usuario nvarchar(45) not null,
-    contrasenia nvarchar(45) not null,
-    ruta int not null, /*Estaria escogiendo el bus*/
-    estado int not null
+create table estado (
+	idEstado int primary key,
+    estatus nvarchar(10) not null
+);
+
+insert into estado values(0, 'Espera');
+insert into estado values(1, 'Aceptado');
+insert into estado values(2, 'Rechazado');
+
+create table relEstadoAlumno (
+	idRelEstadoAlumno int primary key,
+    idAlumno int not null,
+    idEstado int not null,
+    foreign key (idAlumno) references Alumno(idAlumno),
+    foreign key (idEstado) references Estado(idEstado)
 );
 
 create table faena (
@@ -150,3 +150,11 @@ select r.idRelAlumnoReporte, r.idAlumno, a.nombre, a.paterno, a.materno, r.idRep
 from relAlumnoReporte as r
 inner join alumno as a on r.idAlumno = a.idAlumno
 inner join reporte as e on r.idReporte = e.idReporte; 
+
+create view Solicitud as
+select a.nombre, a.paterno,a.materno, a.escuela, a.promedio, a.domicilio,  a.usuario, a.ruta as idRuta, b.nombre as ruta, r.idRelEstadoAlumno,  e.estatus
+from relEstadoAlumno as r
+inner join alumno as a on r.idAlumno = a.idAlumno
+inner join estado as e on r.idEstado = e.idEstado
+inner join bus as b on a.ruta = b.idBUs;
+ 

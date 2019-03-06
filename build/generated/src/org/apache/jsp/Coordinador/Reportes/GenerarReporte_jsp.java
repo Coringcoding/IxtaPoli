@@ -3,6 +3,7 @@ package org.apache.jsp.Coordinador.Reportes;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import org.owasp.esapi.ESAPI;
 import com.ixtapoli.modelo.Reporte;
 import com.ixtapoli.impDao.administradorImpDao;
 import com.ixtapoli.impDao.coordinadorImpDao;
@@ -54,41 +55,46 @@ public final class GenerarReporte_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/materialize.min.css\">\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/solicitudes.css\">\n");
       out.write("        <title>Generar Reporte</title>\n");
       out.write("    </head>\n");
-      out.write("    ");
+      out.write("    <body>\n");
+      out.write("        <nav>\n");
+      out.write("            <a href=\"#\" class=\"brand-logo left\">Generar Reporte</a>\n");
+      out.write("      </nav>\n");
+      out.write("        \n");
+      out.write("        <main>\n");
+      out.write("        \n");
+      out.write("        ");
 
          boolean btn;
             btn = (request.getParameter("bot") != null)?true:false;
             if(btn){
                 Reporte r = new Reporte();
                 coordinadorImpDao coo = new coordinadorImpDao();
-                r.setIdAlumno(new Long(request.getParameter("idAlumno")));
-                r.setIdReporte(new Long(request.getParameter("idReporte")));
+                r.setIdAlumno(new Long(ESAPI.encoder().encodeForHTML(request.getParameter("idAlumno"))));
+                r.setIdReporte(new Long(ESAPI.encoder().encodeForHTML(request.getParameter("idReporte"))));
                 if(coo.generarReporte(r)){
-                    out.print("<script>alert('Reporte creado')"
+                    out.print("<script>alert('Reporte creado');"
                             + "window.location.replace('GenerarReporte.jsp');</script>");
                 }else{
-                    out.print("<script>alert('Error en Reporte')"
+                    out.print("<script>alert('Error en Reporte');"
                             + "window.location.replace('GenerarReporte.jsp');</script>");
                 }
             }
-        
-        
         List<Alumno> al = new ArrayList();
         coordinadorImpDao coo = new coordinadorImpDao();
         administradorImpDao ad = new administradorImpDao();
         al = ad.consultarAlumnos(0);
     
       out.write("\n");
-      out.write("    <body>\n");
-      out.write("        \n");
       out.write("        <div class=\"container\">\n");
       out.write("        <table class=\"highlight centered\"><thead>\n");
       out.write("            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>\n");
@@ -119,6 +125,7 @@ public final class GenerarReporte_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            <input type=\"hidden\" name=\"bot\" value=\"reportar\">\n");
       out.write("        </form>\n");
       out.write("            \n");
+      out.write("        </main>\n");
       out.write("            \n");
       out.write("        <script src=\"../../js/jquery-3.3.1.min.js\"></script>\n");
       out.write("        <script src=\"../../js/materialize.min.js\"></script>\n");
