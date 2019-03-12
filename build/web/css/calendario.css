@@ -1,18 +1,21 @@
 body{
     background-image: url("../img/fondoCoordinador.jpg");
 }
+nav{
+    background: linear-gradient(to right, #880000, #190a05);
+}
+#slide-out{
+   background: linear-gradient(to right, #880000, #190a05);
+}
+
 #calendar{
     width: 40%;
     position: absolute;
     top: 15%;
     left: 30%;
 }
-#title{
-    background-color: #b71c1c;
-    color: white;
-}
 .fc-toolbar, .fc-header-toolbar{
-    background-color: #b71c1c;
+    background: linear-gradient(to right, #880000, #190a05);
     color: white;
     font-size: 1vw;
 }
@@ -49,11 +52,52 @@ body{
     height: 30px;; /*La altura de los eventos*/
 }
 #calendar .fc-today {
-    background: #e0e0e0;
+    background: #880000;
 }
 .fc-toolbar button{
     height: 13.5%; /*La altura de los botones*/
 }
-nav{
-    background: linear-gradient(to right, #880000, #b20a2c);
+.red.darken-4 {
+    background: linear-gradient(to top, #880000, #190a05) !important;
+}
+.fc-toolbar, .fc-header-toolbar {
+    background: linear-gradient(to top, #880000, #190a05)  !important;
+    color: white;
+    font-size: 1vw;
+}
+.fc, .fc-unthemed, .fc-ltr {
+    background-color: #880000;
+}
+
+#modal{
+    background: linear-gradient(to right, #880000, #190a05);
+    color: white;
+    font-size: 1.5vw;
+}
+#title{
+    text-align: center
+}
+textarea{
+    color: white;
+    height: 100px;
+    resize: none;
+}
+#cerrar{
+    background: linear-gradient(to left, #880000, #190a05);
+    color: white;
+    text-align: center;
+}
+.modal-footer{
+    background: linear-gradient(to left, #880000, #190a05);
+}
+
+::-webkit-scrollbar {
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #880000, #190a05); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #880000, #190a05);
 }

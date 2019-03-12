@@ -1,0 +1,9 @@
+body{
+    background-image: url(../img/Calle.jpg);
+}
+nav{
+    background: linear-gradient(to right, #880000, #190a05);
+}
+#slide-out{
+   background: linear-gradient(to right, #880000, #190a05);
+}

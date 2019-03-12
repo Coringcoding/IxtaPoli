@@ -5,59 +5,66 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="../../css/materialize.min.css">
-        <link type="text/css" rel="stylesheet" href="../../css/actividades.css">
-        
-    <body style="background-image: url(../..//img/fondoCoordinador.jpg);">    
-    <nav id="nav" style="position: absolute; height: 12%"><h4>Agregar Actividad</h4></nav>
-        
+        <link rel="stylesheet" href="../../css/actividades.css">
+        <title>Registrar Actividad</title>
     </head>
+    <body>
+    <nav>
+            <a href="#" class="brand-logo center">Agregar Actividad</a>
+      </nav>
         
-        <div class="row" id="actividadForm" style="height:120%;margin-top: 5%;border-radius: 50px">
-            <div id="contenido" class="col s12">
-                <h4 style="margin-left: 35%" class="red-text">Ingresa los datos</h4>
+    
+        <main>
+            <div class="row">
+                <div id="actividadForm" class="col l6 offset-l3">
+                <div id="tituloFormFaena"><h4>Registra la Faena</h4></div>    
                 
                 <form class="col s12" action="../../agregaFaena" method="GET">
                     <div class="input-field col s12">
                     <input type="text" name="nombre" id="nombre" required>
-                    <label for="acount" class=" grey-text darken-3-text">Nombre</label>  
+                    <label for="acount">Nombre</label>  
                     </div>
 
                     <div class="input-field col s12">
                     <input type="text" id="date"   name="fecha" required>
-                    <label for="acount" class=" grey-text darken-3-text">Fecha</label>
+                    <label for="acount">Fecha</label>
                     </div>
 
                     <div class="input-field col s12">
                     <input type="text" class="timepicker" id="time"  name="hora" required="">
-                    <label for="acount" class=" grey-text darken-3-text">Hora</label>
+                    <label for="acount">Hora</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <textarea class="materialize-textarea" name="descripcion" maxlength="1000" rows="50" cols="10" id="descripcion" required></textarea>
-                    <label for="acount" class=" grey-text darken-3-text">Descripcion</label>
+                        <textarea class="materialize-textarea" name="descripcion" maxlength="1000" rows="50" cols="5" id="descripcion" required></textarea>
+                    <label for="acount">Descripcion</label>
                     </div>
 
                     <div class="input-field col s12">
                     <input type="text" name="ubicacion" id="ubicacion" required>
-                    <label for="acount" class=" grey-text darken-3-text">Ubicacion</label>
+                    <label for="acount">Ubicacion</label>
                     </div>
 
                     <div class="input-field col s12">
                     <input type="text" name="materiales" id="materiales" required>
-                    <label for="acount" class=" grey-text darken-3-text">Materiales</label>
+                    <label for="acount">Materiales</label>
                     </div>
 
                     <div class="input-field col s12">
                     <input type="number" name="integrantes" id="integrantes" required>
-                    <label for="acount" class=" grey-text darken-3-text">Integrantes por Equipo</label>
+                    <label for="acount">Integrantes por Equipo</label>
                     </div>
-
-                    <button class="waves-effect waves-light btn"  style="background-color: red" type="submit" value="Agregar Faena" name="agregarBtn">
+                    
+                    <div class="input-field col l3 offset-l9">
+                        <button class="waves-effect waves-light btn" type="submit" value="Agregar Faena" name="agregarBtn" id="agregarBtn">
                        Agregar Faena
                     </button>
+                    </div>
                 </form>
             </div>
         </div>
+            </div>
+        </main>
 
             <script src="../../js/jquery-3.3.1.min.js"></script>
             <script src="../../js/materialize.min.js"></script>

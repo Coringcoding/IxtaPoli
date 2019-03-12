@@ -20,7 +20,7 @@ nav{
     background-color: #EEEEEE;
     position: absolute;
     top: 15%;
-    left: 35%;
+    left: 35%;  
     height: 60%;
     width: 30%;
     border-radius: 10px;
@@ -107,3 +107,7 @@ background: linear-gradient(to right, #880000, #190a05);
     min-height: 100vh;
     flex-direction: column;
 }*/
+
+.deshabilitar{
+    pointer-events:none;
+}

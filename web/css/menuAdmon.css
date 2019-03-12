@@ -5,8 +5,12 @@ body{
     min-height: 110vh;
     flex-direction: column;
 }
+
 nav{
-    background-color: #880000;
+    background: linear-gradient(to right, #880000, #190a05);
+}
+#slide-out{
+   background: linear-gradient(to right, #880000, #190a05);
 }
   main {
     flex: 1 0 auto;

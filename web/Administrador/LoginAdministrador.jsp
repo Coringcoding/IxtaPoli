@@ -21,7 +21,7 @@
         <form action="../IngresarAdministrador" id="formLoginA">
             <div><h4>Administrador</h4></div>
             <div class="input-field">
-                <input id="clave" name="clave" type="text" class="validate" class="required number">
+                <input id="clave" name="clave" type="text" class="validate" class="required number" onkeyup="validarClave();" autocomplete="off">
                 <label for="clave">Clave Especial</label>
             </div>
             <div class="input-field">
@@ -34,8 +34,8 @@
             </div>
             
             <div class="row espacio">
-                <a href="RegistroAdministrador.jsp" ID="linkLoginA" class="col l7 input-field">¿Aún no tienes cuenta?</a>
-            <button class="btn waves-effect waves-light  red darken-4 col l5 input-field" type="submit" name="ingresar" value="Ingresar">
+                <a href="RegistroAdministrador.jsp" Id="linkLoginA" class="col l7 input-field deshabilitar">¿Aún no tienes cuenta?</a>
+                <button class="btn waves-effect waves-light  red darken-4 col l5 input-field" type="submit" name="ingresar" id="ingresar" value="Ingresar" disabled>
                 Ingresar<i class="material-icons right">send</i>
             </button>
             </div>
@@ -55,15 +55,15 @@
         <script src="../js/jquery-3.3.1.min.js"></script> 
         <script src="../js/materialize.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
-        <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
-        
-        <script type="text/javascript">
-            function validarFormulario(){
-          $("#formLoginA").validate();
-       }
-       $(document).ready(function(){
-          validarFormulario();
-       });
+        <script>
+             function validarClave(){
+          var cl = document.getElementById("clave").value;
+          if(cl === "12345"){
+              document.getElementById("ingresar").removeAttribute("disabled");
+              document.getElementById("linkLoginA").className = "col l7 input-field";
+          }
+       };
         </script>
+        
     </body>
 </html>

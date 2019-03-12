@@ -40,16 +40,20 @@
               <div id="faena" class="col l3 offset-l1">
                     <img class="responsive-img" src="../../img/equipos.jpg" alt="">
                  Equipos de Actividades            
-              </div></a>
+            </div></a>
             
             <a href=""><div id="seguimiento" class="col l3 offset-l1">
                     <img class="responsive-img" src="../../img/recorrido.jpg" alt="">
                 Seguimiento de Recorrido
                 </div></a>
+            
+            <a href="../../Coordinador/Reportes/GenerarReporte.jsp"><div id="seguimiento" class="col l3 offset-l1">
+                    <img class="responsive-img" src="../../img/Baja.jpg" alt="">
+                Generar Reporte
+                </div></a>
       </div>
         </main>
         
-        <a href="../../Coordinador/Reportes/GenerarReporte.jsp">Coordinador: Generar Reporte</a>
          <script src="../../js/jquery-3.3.1.min.js"></script>
          <script src="../../js/materialize.min.js"></script>
          <script>

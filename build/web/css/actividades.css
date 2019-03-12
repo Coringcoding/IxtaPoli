@@ -1,44 +1,69 @@
-#body{
+body{
     background-image: url("../img/fondoCoordinador.jpg");
 }
+nav{
+    background: linear-gradient(to right, #880000, #190a05);
+}
 #actividadForm{
-    position: absolute;
-    top:10%;
-    left:14%;
-    width: 70%;
-    height: 110%;
-    background-color: #ffffff;
-    padding-left: 5%;
-    padding-right: 5%;
-    
-}
-#contenido{
-    position:relative;
-    top:6%;
-    
-}
-#botonEnviar{
     position: relative;
-    left:76%;
-    top: 90%;
-    background-color: #880000;
+    background-color: #eee;
+    border-radius: 10px;
+    top: 5vw;
 }
 
-#nav{
-    background-color: #880000;
-    text-align: center;
+#agregarBtn{
+    background: linear-gradient(to right, #880000, #190a05);
 }
-#imagenes{
-    position:absolute;
-    margin-top: 10%;
-    margin-left: 5vw;
-}
-img{
-    border-radius: 50%;
-}
+
 a{
     font-family: sans-serif;
     color: white;
     font-size: 20px;
+}
+
+
+
+.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label,.input-field textarea:focus + label {
+ color: #880000 !important;
+}
+
+.input-field input[type=text]:focus, .input-field input[type=number]:focus, .input-field input[type=password]:focus, .input-field textarea:focus{
+ border-bottom: 1px solid #880000 !important;
+ box-shadow: 0 1px 0 0 #880000 !important;
+}
+label{
+    color: black !important;
+}
+
+input[type=text],input[type=password], input[type=number], textarea{
+    border-color: #880000 !important;
+}
+main>form>div{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#tituloFormFaena{
+    padding-bottom: .5vw;
     text-align: center;
+}
+main{
+    padding-bottom: 5vw;
+}
+
+.datepicker-date-display {
+    background: linear-gradient(to right, #880000, #190a05);
+}
+.timepicker-digital-display{
+    background: linear-gradient(to right, #880000, #190a05);
+}
+.datepicker-table td.is-today {
+    color: #880000;
+}
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    color: #880000;
+}
+
+.timepicker-close {
+    color: #880000;
 }
