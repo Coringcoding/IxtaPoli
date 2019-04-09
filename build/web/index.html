@@ -5,9 +5,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/materialize.min.css">
-        <link type="text/css" rel="stylesheet" href="css/login.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#alumno_btn").click(function(){
+                    $("#main").animate({left:"22.5%"},400); 
+                    $("#main").animate({left:"30%"},500); 
+                    $("#admin").css("visibility","hidden");
+                    $("#admin").animate({left:"25%"},400);
+
+                    $("#alumno").animate({left:"17%"},400);
+                    $("#alumno").animate({left:"30%"},500);
+                    $("#alumno").css("visibility","visible");
+                }); 
+    
+                $("#admin_btn").click(function(){
+                    $("#main").animate({left:"77.5%"},400); 
+                    $("#main").animate({left:"70%"},500);
+                    $("#alumno").css("visibility","hidden");
+                    $("#alumno").animate({left:"75%"},400);
+
+                    $("#admin").animate({left:"83.5%"},400);
+                    $("#admin").animate({left:"70%"},500);
+                    $("#admin").css("visibility","visible");
+                });
+                });
+        </script>
+        <link type="text/css" rel="stylesheet" href="css/inicio.css">
     </head>
     <body>
         
@@ -16,36 +42,45 @@
       </nav>
         
         <main>  
-            <!--<a href="Administrador/LoginAdministrador.jsp">-->
-            <a href="Administrador/LoginAdministrador.jsp">
-            <div id="administradorL">
-                <img src="img/loginImg.png" id="imagenL">
-                <div class="waves-effect waves-light btn" id="tituloA">Administrador</div>
+            <div id="box">
+            <div id="main"></div>
+            
+            <div id="admin">
+                <h1>Administrador</h1>
+                
+                <a  href="Administrador/LoginAdministrador.jsp"><button class="waves-effect waves-light btn ">Iniciar Sesion</button></a>
             </div>
-        </a>
-            <a href="Alumno/LoginAlumno/LoginAlumno.jsp">
-            <div id="alumnoL">
-                <img src="img/loginImg.png" id="imagenL">
-                <div class="waves-effect waves-light btn" id="tituloB">Alumno</div>
+            
+            <div id="alumno">
+                <h1>Alumno</h1>
+                <a href="Alumno/LoginAlumno/LoginAlumno.jsp"><button class="waves-effect waves-light btn ">Iniciar Sesion</button></a>
             </div>
-        </a>
-    </main>
+            
+            <div id="alumno_msg">¿Eres Alumno?</div>
+            <div id="admin_msg">¿Eres Administrador?</div>
+            
+            <button id="admin_btn">Cambiar Usuario</button>
+            <button id="alumno_btn">Cambiar Usuario</button>
+            
+            
+        </div>
+        </main>
         
         <footer>
             <div class="row">
-                <div class="col l2">
+                <div class="col s8">
                 <h5 class="white-text">GIEB Projects</h5>
               </div>
-                <div class="col l2 offset-l6">
+                <div class="col s2">
                     <h5 class="white-text">¿Quiénes Somos?</h5>
                 </div>
-              <div class="col l2">
+              <div class="col s2">
+                  <div class="col s6">
                 <h5 class="white-text">Contacto</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Facebook Ixtapoli</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Gobierno Ixtapaluca</a></li>
-                  
-                </ul>
+                  </div>
+                  <div class="col s6">
+                <img src="img/facebook.svg">
+                  </div>
               </div>
                 
             </div>

@@ -5,7 +5,7 @@ function validar(idForm){
     for(i=0; i< inputs.length; i++){
     if (inputs[i].value === ""){
         band = false;
-            alert("Llene todos los campos");
+            Swal.fire("Llene todos los campos");
             break;
         }
     }

@@ -20,6 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">     
         <link type="text/css" rel="stylesheet" href="../../css/loginAdministrador.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <title>Login Alumno</title>
     </head>
     <body>

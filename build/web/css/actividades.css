@@ -1,69 +1,63 @@
 body{
-    background-image: url("../img/fondoCoordinador.jpg");
+    background-image: url("../img/bus home.jpg");
+    background-size: cover;
+    font-family: Abel;
+    
 }
-nav{
-    background: linear-gradient(to right, #880000, #190a05);
-}
+ *{
+      font-family: 'Abel', sans-serif;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  footer{
+      background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
+      bottom:0;
+      width: 100%;
+      position: absolute;
+  }
+  
 #actividadForm{
+    position: absolute;
+    top:15%;
+    left:15%;
+    width: 70%;
+    height: 70%;
+    background-color: #ffffff;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+}
+#cartas{
+    background-color: white;
+    color:black;
+    border-radius: 10%;
+    padding-top: 1%;
+}
+#contenido{
+    position:relative;
+    top:6%; 
+}
+#botonEnviar{
     position: relative;
-    background-color: #eee;
-    border-radius: 10px;
-    top: 5vw;
+    background-color: #880000;
 }
 
-#agregarBtn{
-    background: linear-gradient(to right, #880000, #190a05);
-}
-
-a{
-    font-family: sans-serif;
-    color: white;
-    font-size: 20px;
-}
-
-
-
-.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label,.input-field textarea:focus + label {
- color: #880000 !important;
-}
-
-.input-field input[type=text]:focus, .input-field input[type=number]:focus, .input-field input[type=password]:focus, .input-field textarea:focus{
- border-bottom: 1px solid #880000 !important;
- box-shadow: 0 1px 0 0 #880000 !important;
-}
-label{
-    color: black !important;
-}
-
-input[type=text],input[type=password], input[type=number], textarea{
-    border-color: #880000 !important;
-}
-main>form>div{
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-#tituloFormFaena{
-    padding-bottom: .5vw;
+nav{
+    background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
     text-align: center;
 }
-main{
-    padding-bottom: 5vw;
+#imagenes{
+    position:absolute;
+    margin-top: 10%;
+    margin-left: 5vw;
 }
-
-.datepicker-date-display {
-    background: linear-gradient(to right, #880000, #190a05);
+img{
+    border-radius: 10%;
 }
-.timepicker-digital-display{
-    background: linear-gradient(to right, #880000, #190a05);
-}
-.datepicker-table td.is-today {
-    color: #880000;
-}
-.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
-    color: #880000;
-}
-
-.timepicker-close {
-    color: #880000;
+a{
+    font-family: Abel;
+    color: white;
+    font-size: 20px;
+    text-align: center;
 }

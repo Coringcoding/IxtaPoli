@@ -15,13 +15,13 @@ public class Conexion {
 	
 	public Conexion() {
 				
-		final String URL = "jdbc:" + MOTOR + "://" + SERVIDOR + "/" + BASE;	
+		final String URL = "jdbc:" + MOTOR + "://" + SERVIDOR + "/" + BASE + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";	
 		final String USERNAME = USUARIO;
 		final String PASSWORD = CONTRA;
 		
 		try {
 			
-			Class.forName("com." + MOTOR + ".jdbc.Driver");
+			Class.forName("com." + MOTOR + ".cj.jdbc.Driver");
 			conexion = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			System.out.println("Conexion exitosa");
 			

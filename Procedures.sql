@@ -64,7 +64,8 @@ create procedure Usuario(
  in	prom float,
  in us nvarchar(45),
  in contra nvarchar(45),
- in rut int
+ in rut int,
+ in tipous int
  )
 BEGIN
 /*1 registrar, 2 eliminar, 3 editar, 4 consultar*/
@@ -95,6 +96,7 @@ BEGIN
     elseif accion = 3 then
 		update alumno set nombre = nom, paterno = pat, materno = mat, escuela = esc, domicilio = domi, 
         promedio = prom, usuario = us, contrasenia = contra where idAlumno = idAl;
+        update relAlumnoTipoUs set idTipoUsuario = tipous where idAlumno = idAl;
     else
 		if idAl = 0 then
 			select * from AlumnoConsulta;

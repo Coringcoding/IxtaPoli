@@ -8,6 +8,7 @@ public class Alumno extends Usuario {
 	private String domicilio;
         private int ruta;
         private String rutaS;
+        private int tipous;
 		
 	public Alumno() {
 		super();
@@ -60,6 +61,16 @@ public class Alumno extends Usuario {
         public void setRutaS(String rutaS) {
             this.rutaS = rutaS;
         }
+
+        public int getTipous() {
+            return tipous;
+        }
+
+        public void setTipous(int tipous) {
+            this.tipous = tipous;
+        }
+        
+        
         
         
 	        

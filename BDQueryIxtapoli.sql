@@ -76,12 +76,17 @@ CREATE TABLE recorrido(
 
 CREATE TABLE reporte(
 	idReporte int primary key,
-    descripcion nvarchar(60)
+    descripcion nvarchar(100)
 );
 
 
-insert into reporte values(1,'No acudir o dar caso omiso');
+insert into reporte values(1,'Faltó o dio caso omiso sin falta justificada');
 insert into reporte values(2,'Duplicidad de registro');
+insert into reporte values(3,'Realización de proselitismo');
+insert into reporte values(4,'Información falsa');
+insert into reporte values(5,'Promedio menor de 7.5');
+insert into reporte values(6,'Falta a  dos jornada convocada por Coordinacion General de Ixtapoli');
+insert into reporte values(7,'Excedió el numero de semestres marcados en programa académico');
 
     
 CREATE TABLE bus(
@@ -101,6 +106,9 @@ CREATE table relAlumnoTipoUs (
     idAlumno int references alumno (idAlumno),
     idTipoUsuario int references tipoUsuario (idTipoUsuario)
 );
+
+insert into tipoUsuario values(0,'Alumno');
+insert into tipoUsuario values(1,'Coordinador');
 
 CREATE TABLE relFaenaEquipo (
 	idRelFaenaEquipo int primary key,
@@ -141,8 +149,11 @@ CREATE TABLE relAlumnoReporte(
 
 /*vistas*/
 create view AlumnoConsulta as
-select a.idAlumno,a.nombre, a.paterno,a.materno, a.escuela, a.domicilio, a.promedio, a.usuario, a.contrasenia,a.ruta as idRuta, b.nombre as ruta
-from alumno as a  
+select a.idAlumno,a.nombre, a.paterno,a.materno, a.escuela, a.domicilio, a.promedio, a.usuario, a.contrasenia,a.ruta as idRuta, b.nombre as ruta, e.estatus, t.idTipoUsuario
+from relEstadoAlumno as r
+inner join alumno as a on r.idAlumno = a.idAlumno
+inner join estado as e on r.idEstado = e.idEstado
+inner join relAlumnoTipoUs as t on r.idAlumno = t.idAlumno
 inner join bus as b on a.ruta = b.idBUs;
 
 create view ReporteConsulta as

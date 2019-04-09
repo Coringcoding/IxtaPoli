@@ -57,7 +57,32 @@ public final class solicitudes_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">\r\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/materialize.min.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/solicitudes.css\">\r\n");
       out.write("        <title>Alumnos</title>\r\n");
+      out.write("        \r\n");
+      out.write("        ");
+
+        boolean btn;
+            btn = (request.getParameter("bot") != null)?true:false;
+        if(btn){
+            administradorImpDao ad = new administradorImpDao();
+            int idS = Integer.parseInt(request.getParameter("ids"));
+            int Es = Integer.parseInt(request.getParameter("estado"));
+            System.out.println(Es);
+            if(ad.CambiarSolicitud(idS, Es)){
+                if(Es == 1){
+                out.print("<script>alert('Solicitud Aceptada');</script>");
+                }else{
+                    out.print("<script>alert('Solicitud Rechazada');</script>");
+                }
+            }else{
+                out.print("<script>alert('Error al procesar solicitud');</script>");
+            }
+        }
+        
+    
+      out.write("\r\n");
+      out.write("        \r\n");
       out.write("        ");
 
             List<Solicitud> sol = new ArrayList();
@@ -68,13 +93,12 @@ public final class solicitudes_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <script>\r\n");
-      out.write("            function aceptar(i){\r\n");
+      out.write("            function aceptarSoli(i, e){\r\n");
       out.write("                var tr = document.getElementById(\"tr\"+i);\r\n");
       out.write("                var ids = tr.dataset.ids;\r\n");
-      out.write("                var ide = tr.dataset.ide;\r\n");
       out.write("                document.getElementById(\"ids\").value = ids;\r\n");
-      out.write("                document.getElementById(\"estado\").value = ide;\r\n");
-      out.write("                document.getElementById(\"editar\").submit();\r\n");
+      out.write("                document.getElementById(\"estado\").value = e;\r\n");
+      out.write("                document.getElementById(\"aceptar\").submit();\r\n");
       out.write("            };\r\n");
       out.write("            \r\n");
       out.write("            \r\n");
@@ -101,9 +125,14 @@ public final class solicitudes_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            };\r\n");
       out.write("        </script>\r\n");
       out.write("        \r\n");
-      out.write("        <div class=\"container\">\r\n");
-      out.write("        <table class=\"highlight centered\"><thead>\r\n");
-      out.write("            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>\r\n");
+      out.write("        <nav>\r\n");
+      out.write("            <a href=\"#\" class=\"brand-logo left\">Solicitudes</a>\r\n");
+      out.write("      </nav>\r\n");
+      out.write("        <main>\r\n");
+      out.write("        \r\n");
+      out.write("        <div class=\"row\">\r\n");
+      out.write("        <table class=\"highlight centered col l8 offset-l2\"><thead>\r\n");
+      out.write("                <tr><th>Nombre</th><th>Paterno</th><th>Materno</th><th></th></tr>\r\n");
       out.write("            </thead>\r\n");
       out.write("            <tbody>\r\n");
       out.write("            ");
@@ -114,8 +143,8 @@ public final class solicitudes_jsp extends org.apache.jasper.runtime.HttpJspBase
                         + "<tr id='esc"+i+"'><td>Escuela:</td><td colspan='2'>"+sol.get(i).getEscuela()+"</td></tr>"
                         + "<tr id='prom"+i+"'><td>Promedio:</td><td colspan='2'>"+sol.get(i).getPromedio()+"</td></tr>"        
                         + "<tr id='dom"+i+"'><td>Domicilio:</td><td colspan='2'>"+sol.get(i).getDomicilio()+"</td></tr>"
-                        + "<tr id='usr"+i+"'><td>Usuario:</td><td colspan='2'>"+sol.get(i).getUsr()+"</td><td id='tr"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"' data-e='2'  onclick='aceptar("+i+");'>Rechazar</td></tr>"
-                        + "<tr id='rut"+i+"'><td>Ruta:</td><td colspan='2'>"+sol.get(i).getRuta()+"</td><td id='tr"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"' data-e='1' onclick='aceptar("+i+");'>Aceptar Solicitud</td></tr>"
+                        + "<tr id='usr"+i+"'><td>Usuario:</td><td colspan='2'>"+sol.get(i).getUsr()+"</td><td id='tr"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"'  onclick='aceptarSoli("+i+", 2);'>Rechazar</td></tr>"
+                        + "<tr id='rut"+i+"'><td>Ruta:</td><td colspan='2'>"+sol.get(i).getRuta()+"</td><td id='tre"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"'  onclick='aceptarSoli("+i+", 1);'>Aceptar Solicitud</td></tr>"
                         + "</tr>");
                 }
             
@@ -124,10 +153,11 @@ public final class solicitudes_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </table>\r\n");
       out.write("            </div>\r\n");
       out.write("            <form method=\"get\" name=\"aceptar\" id=\"aceptar\" action=\"solicitudes.jsp\">\r\n");
-      out.write("                <input type=\"hidden\" id=\"ids\" name=\"idSolicitud\">\r\n");
+      out.write("                <input type=\"hidden\" id=\"ids\" name=\"ids\">\r\n");
       out.write("                <input type=\"hidden\" id=\"estado\" name=\"estado\">\r\n");
-      out.write("                <input type=\"hidden\" id=\"button\" name=\"enviar\">\r\n");
+      out.write("                <input type=\"hidden\" id=\"bot\" name=\"bot\" value=\"bot\">\r\n");
       out.write("            </form>\r\n");
+      out.write("            </main>\r\n");
       out.write("            \r\n");
       out.write("             <script src=\"../../js/jquery-3.3.1.min.js\"></script>\r\n");
       out.write("        <script src=\"../../js/materialize.min.js\"></script>\r\n");

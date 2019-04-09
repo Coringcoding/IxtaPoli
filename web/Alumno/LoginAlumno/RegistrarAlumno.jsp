@@ -17,7 +17,8 @@
         <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <link rel="stylesheet" type="text/css" href="../../css/administrador.css">
+        <link rel="stylesheet" type="text/css" href="../../css/registrar.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <title>Registro Alumno</title>
     </head>
     <body>
@@ -30,8 +31,7 @@
         
         <main>
             <div class="row">           
-                <form action="../../RegistrarAlumno" method="post" class="col l8 offset-l2" id="formregistroAl" name="formregistroAl" onsubmit="return valReg('formregistroAl');">
-                    <div id="namA">Alumno</div>
+                <form action="../../RegistrarAlumno" method="post" class="col 12" id="formregistro" name="formregistroAl" onsubmit="return valReg('formregistroAl');">
                     
                     <div class="row">
                     <div class="input-field col l6">
@@ -102,10 +102,6 @@
                 </form>
             </div>
             
-            <span id="error" style="font-family: Verdana, Arial, Helvetica, sans-serif;
-                font-size: 12pt;color: #CC3300; position:relative;visibility:hidden;">
-                usuario Ocupado ¡¡¡
-            </span>
              </main>
             
             <footer>

@@ -20,8 +20,8 @@ public class administradorImpDao implements iAdministradorDao{
     final String REGISTRARADMINISTRADOR = "{CALL Administrador(1,0,?,?,?,?,?,?,?)}";
     final String INICIARSESION = "{CALL IniciarSesionAdmin(?,?)}";
     final String VALIDARADMINISTRADOR = "{CALL ValidarAdministrador(?)}";
-    final String CONSULTARALUMNOS="{CALL Usuario(4,?,'','','','','',0,'','',0)}";
-    final String ACTUALIZARDATOS="{CALL Usuario(3,?,?,?,?,?,?,?,?,?,0)}";
+    final String CONSULTARALUMNOS="{CALL Usuario(4,?,'','','','','',0,'','',0,0)}";
+    final String ACTUALIZARDATOS="{CALL Usuario(3,?,?,?,?,?,?,?,?,?,0,?)}";
     final String CONSULTARSOLICITUDES = "{CALL Solicitudes(0,3)}";
     final String CAMBIARSOLICITUD = "{CALL Solicitudes(?,?)}";
 
@@ -103,6 +103,7 @@ public class administradorImpDao implements iAdministradorDao{
                 a.setContra(res.getString("contrasenia"));
                 a.setRutaS(res.getString("ruta"));
                 a.setRuta(res.getInt("idRuta"));
+                a.setTipous(res.getInt("idTipoUsuario"));
                 al.add(a);
                 }
             }
@@ -225,6 +226,7 @@ public class administradorImpDao implements iAdministradorDao{
             st.setFloat(7, s.getPromedio());
             st.setString(8, s.getUsr());
             st.setString(9, s.getContra());
+            st.setInt(10, s.getTipous());
             st.executeQuery();
             bandera = true;
         } catch (Exception e) {

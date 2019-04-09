@@ -7,7 +7,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="../css/materialize.min.css">
-        <link rel="stylesheet" href="../css/administrador.css">
+        <link rel="stylesheet" href="../css/registrar.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <title>Registro Administrador</title>
     </head>
     <body>
@@ -43,8 +44,7 @@
         
         <main>
             <div class="row">
-                <form method="get" id="formregistro" action="RegistroAdministrador.jsp" onsubmit="return valReg('formregistro');" class="col l8 offset-l2">
-            <div id="nam">Administrador</div>
+             <form method="get" id="formregistro" action="RegistroAdministrador.jsp" onsubmit="return valReg('formregistro');" class="col s12">
             
             <div class="row">
             <div class="input-field col l6">
@@ -116,6 +116,7 @@
         <script src="../js/jquery-3.3.1.min.js"></script> 
         <script src="../js/materialize.min.js"></script>
         <script src="../js/validaciones.js"></script>
+        <script src="../js/sweetalert2.min.js"></script>
         
         <script>
             function existencia(){

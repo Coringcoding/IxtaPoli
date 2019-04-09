@@ -1,9 +1,11 @@
 body{
-    background-image: url("../img/fondoCoordinador.jpg") ;
+     background-image: url("../img/fondoLogins.jpg");
     background-size: cover;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: Abel;
+
 }
 main {
     flex: 1 0 auto;
@@ -12,26 +14,28 @@ main {
       display: none;
   }
 
+
 nav{
-    background: linear-gradient(to right, #880000, #190a05);
+    /*background-color: #880000;*/
+      background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
 }
 
 #formLoginA{
-    background-color: #EEEEEE;
+    background-color: #FCFCFC;
     position: absolute;
     top: 15%;
-    left: 35%;  
+    left: 35%;
     height: 60%;
     width: 30%;
     border-radius: 10px;
 }
 .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label {
- color: #880000 !important;
+ color: #D20051 !important;
 }
 
 .input-field input[type=text]:focus, .input-field input[type=number]:focus, .input-field input[type=password]:focus{
- border-bottom: 1px solid #880000 !important;
- box-shadow: 0 1px 0 0 #880000 !important;
+ border-bottom: 1px solid #D20051 !important;
+ box-shadow: 0 1px 0 0 #D20051 !important;
 }
 label{
     color: black !important;
@@ -39,7 +43,7 @@ label{
 
 
 input[type=text],input[type=password], input[type=number]{
-    border-color: #880000 !important;
+    border-color: #D20051 !important;
 }
 main>form>div{
     padding-left: 10%;
@@ -62,8 +66,9 @@ label{
 #tituloFormAlumno{
     padding-bottom: .5vw;
 }
-footer{
-      background: linear-gradient(to right, #880000, #190a05);
+  footer{
+      background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
+      height: 8%;
   }
 #logo{
       margin-top: 20px;
@@ -98,7 +103,7 @@ buttom{
     height: 20vh;
 }
 button{
-background: linear-gradient(to right, #880000, #190a05);
+ background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
 }
 /*.bg-dark{    
     background-image: url("../img/fondoCoordinador.jpg") ;
@@ -107,7 +112,3 @@ background: linear-gradient(to right, #880000, #190a05);
     min-height: 100vh;
     flex-direction: column;
 }*/
-
-.deshabilitar{
-    pointer-events:none;
-}

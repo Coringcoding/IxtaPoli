@@ -5,12 +5,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          <link rel="stylesheet" href="../css/materialize.min.css">
-         <link type="text/css" rel="stylesheet" href="../css/menuAdmon.css">
+         <link type="text/css" rel="stylesheet" href="../css/actividades.css">
+         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     </head>
     <body>
     
      <nav>
-            <a href="#" class="brand-logo center">Ixtapoli Virtual</a>
+         <a href="#" class="brand-logo center">Ixtapoli Virtual</a>
       </nav>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="slide-out" class="sidenav">
@@ -30,22 +31,30 @@
         <div class="row" id="imagenes">
             
             <a href="Solicitudes/solicitudes.jsp">
-            <div id="solicitudes" class="col l3">
+            <div id="cartas" class="col l3">
                     <img class="responsive-img" src="../img/Solicitudes.jpg" alt="">
                 Solicitudes
             </div></a>
            
           <a href="../Administrador/DarBaja/baja.jsp">
-              <div id="Baja" class="col l3 offset-l1">
+              <div id="cartas" class="col l3 offset-l1">
                     <img class="responsive-img" src="../img/Baja.jpg" alt="">
                  Dar de Baja            
             </div></a>
             
-            <a href="ActualizarInformacion/ListaAlumno.jsp"><div id="seguimiento" class="col l3 offset-l1">
+            <a href="ActualizarInformacion/ListaAlumno.jsp"><div id="cartas" class="col l3 offset-l1">
                     <img class="responsive-img" src="../img/actualizar.PNG" alt="">
                 Actualizar información
                 </div></a>
       </div>
+        <footer>
+            <div class="row">
+                <div class="col s12">
+                <h6 class="white-text">GIEB Projects</h6>
+              </div>
+                
+            </div>
+        </footer>
       
          <script src="../js/jquery-3.3.1.min.js"></script>
          <script src="../js/materialize.min.js"></script>

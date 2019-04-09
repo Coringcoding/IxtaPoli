@@ -45,7 +45,7 @@
     %>
         <div class="container">
         <table class="highlight centered"><thead>
-            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>
+                <tr><th>Nombre</th><th>Paterno</th><th>Materno</th><th></th><th></th></tr>
             </thead>
             <tbody>
             <%
@@ -53,18 +53,21 @@
                  out.print("<tr>"
                         + "<td>"+al.get(i).getNombre()+"</td><td>"+al.get(i).getPaterno()+"</td><td>"+al.get(i).getMaterno()+"</td>"
                                 + "<td><select id='sel"+al.get(i).getId()+"'>"
-                                + "<option value='1'>No Acudir o dar caso omiso</option>"
+                                + "<option value='1'>Faltó o dio caso omiso sin falta justificada</option>"
                                 + "<option value='2'>Duplicidad de Registro</option>"
+                                + "<option value='3'>Realización de proselitismo</option>"
+                                + "<option value='4'>Información falsa</option>"
+                                + "<option value='5'>Promedio menor de 7.5</option>"
+                                + "<option value='6'>Falta a  dos jornada convocada por Coordinacion General de Ixtapoli</option>"
+                                + "<option value='7'>Excedió el numero de semestres marcados en programa académico</option>"
                                 + "</select></td>"
-                                + "<td><button onclick='reportar("+al.get(i).getId()+");'>Reportar</button></td></tr>");
+                                + "<td><button onclick='reportar("+al.get(i).getId()+");' class='btn waves-effect waves-light  red darken-4'>Reportar</button></td></tr>");
                 }
             %>
             </tbody>
         </table>
             </div>
-            
-       
-        
+                    
             <form method="post" name="reporte" id="reporte" action="">
             <input type="hidden" name="idAlumno" id="idAlumno">
             <input type="hidden" name="idReporte" id="idReporte">

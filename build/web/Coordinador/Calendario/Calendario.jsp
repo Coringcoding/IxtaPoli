@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../../css/materialize.min.css">
         <link rel="stylesheet" href="../../css/fullcalendar.min.css">
         <link rel="stylesheet" href="../../css/calendario.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <title>Calendario</title>
     </head>
     <body>
@@ -35,9 +36,6 @@
         
         <main>
             <div id="calendar"></div>
-            <div class="row">
-                <a href="../Calendario/Actividades.jsp" class="col l2 offset-l10">Registrar Faena</a>
-            </div>
             
             <!-- Modal Structure -->
             <div id="modal" class="modal modal-fixed-footer"><!-- bottom-sheet -->
@@ -61,7 +59,21 @@
               </div>
             </div>
             </div>
+            
+            
         </main>
+        <footer>
+            <div class="row">
+                <div class="col s8">
+                <h6 class="white-text">GIEB Projects</h6>
+              </div>
+                <div class="col s4">
+                    <a href="../Actividades/Actividades.jsp" class="col sl2"><h6 style="color:white;">Registrar Faena</h6></a>
+                </div>
+              </div>
+                
+            </div>
+        </footer>
         
         <script src="../../js/jquery-3.3.1.min.js"></script>
         <script src="../../js/moment.min.js"></script>

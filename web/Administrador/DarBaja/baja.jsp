@@ -60,7 +60,7 @@
     %>
         <div class="container">
         <table class="highlight centered"><thead>
-            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th><th>Motivo del Reporte</th></tr>
+                <tr><th>Nombre</th><th>Paterno</th><th>Materno</th><th>Motivo del Reporte</th><th></ht><th></th></tr>
             </thead>
             <tbody>
             <%
@@ -68,8 +68,8 @@
                  out.print("<tr>"
                         + "<td>"+rep.get(i).getNombre()+"</td><td>"+rep.get(i).getPaterno()+"</td><td>"+rep.get(i).getMaterno()+"</td>"
                                 + "<td>"+rep.get(i).getDescripcion()+"</td>"
-                                + "<td><button onclick='eliminar("+rep.get(i).getIdAlumno()+", "+rep.get(i).getIdReporte()+");'>Eliminar Reporte</button></td>"
-                                + "<td><button onclick='baja("+rep.get(i).getIdAlumno()+");'>Dar de Baja</button></td></tr>");
+                                + "<td><button onclick='eliminar("+rep.get(i).getIdAlumno()+", "+rep.get(i).getIdReporte()+");' class='btn waves-effect waves-light  red darken-4'>Eliminar Reporte</button></td>"
+                                + "<td><button onclick='baja("+rep.get(i).getIdAlumno()+");' class='btn waves-effect waves-light  red darken-4'>Dar de Baja</button></td></tr>");
                 }
             %>
             </tbody>

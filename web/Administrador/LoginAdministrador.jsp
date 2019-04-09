@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="../css/materialize.min.css">
         <link rel="stylesheet" href="../css/loginAdministrador.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <title>Login Administrador</title>
     </head>
     <body>
@@ -61,6 +62,9 @@
           if(cl === "12345"){
               document.getElementById("ingresar").removeAttribute("disabled");
               document.getElementById("linkLoginA").className = "col l7 input-field";
+          }else{
+              document.getElementById("ingresar").setAttribute("disabled", "");
+              document.getElementById("linkLoginA").className = "col l7 input-field deshabilitar";
           }
        };
         </script>

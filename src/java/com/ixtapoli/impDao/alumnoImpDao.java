@@ -19,8 +19,8 @@ public class alumnoImpDao implements iAlumnoDao {
 	
 	private Conexion cnx;
         private ResultSet rs;
-	final String REGISTRARALUMNO = "{CALL Usuario(1,?,?,?,?,?,?,?,?,?,?)}";
-	final String ELIMINARALUMNO = "{CALL Usuario(2,?,'','','','','',0,'','',0)}";
+	final String REGISTRARALUMNO = "{CALL Usuario(1,?,?,?,?,?,?,?,?,?,?,0)}";
+	final String ELIMINARALUMNO = "{CALL Usuario(2,?,'','','','','',0,'','',0,0)}";
 	final String EDITARALUMNO = "{CALL Usuario(3,,?,?,?,?,?,?,?,?,?,?)}";
         final String CONSULTARFAENAS = "{CALL faena(4,0,'','0000-00-00','','','','',0)}";
         final String INICIARSESION = "{CALL IniciarSesionAlumno(?,?)}";

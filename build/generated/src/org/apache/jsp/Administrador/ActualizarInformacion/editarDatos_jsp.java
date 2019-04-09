@@ -79,6 +79,7 @@ public final class editarDatos_jsp extends org.apache.jasper.runtime.HttpJspBase
             alu.setPromedio(Float.parseFloat(ESAPI.encoder().encodeForHTML(request.getParameter("promedio"))));
             alu.setUsr(ESAPI.encoder().encodeForHTML(request.getParameter("usuario")));
             alu.setContra(ESAPI.encoder().encodeForHTML(request.getParameter("contra")));
+            alu.setTipous(Integer.parseInt(ESAPI.encoder().encodeForHTML(request.getParameter("TipoUs"))));
             if(admon.actualizarDatos(alu)){
                 out.print("<script>alert('Datos Actualizados'); window.location.replace('ListaAlumno.jsp');</script>");
             }else{
@@ -174,24 +175,41 @@ public final class editarDatos_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                    \n");
       out.write("                    <div class=\"row\">\n");
-      out.write("                        <button class=\"btn waves-effect waves-light  red darken-4 col l3 offset-l6 input-field\" type=\"submit\" name=\"bot\" value=\"actualizar\">\n");
+      out.write("                    <div class=\"input-field col l6\">\n");
+      out.write("                        <select name=\"TipoUs\" id=\"TipoUs\" class=\"form-control\">\n");
+      out.write("                            ");
+
+                                if(a.getTipous() == 0){
+                                    out.print("<option value=\"0\" selected>Alumno</option><option value=\"1\">Coordinador</option>");
+                                }else{
+                                    out.print("<option value=\"0\">Alumno</option><option value=\"1\" selected>Coordinador</option>");
+                                }
+                            
+      out.write("                       \n");
+      out.write("                        </select>\n");
+      out.write("                        <label>Tipo de Usuario</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    \n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <button class=\"btn waves-effect waves-light  red darken-4 col l3 offset-l8 input-field\" type=\"submit\" name=\"bot\" value=\"actualizar\">\n");
       out.write("                        Actualizar<i class=\"material-icons right\">send</i>\n");
       out.write("                        </button>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"row\"></div>\n");
       out.write("                </form>\n");
       out.write("            </div>\n");
-      out.write("            \n");
-      out.write("            <span id=\"error\" style=\"font-family: Verdana, Arial, Helvetica, sans-serif;\n");
-      out.write("                font-size: 12pt;color: #CC3300; position:relative;visibility:hidden;\">\n");
-      out.write("                usuario Ocupado ¡¡¡\n");
-      out.write("            </span>\n");
       out.write("             </main>\n");
       out.write("                    \n");
       out.write("                    \n");
       out.write("           <script type=\"text/javascript\" src=\"../../js/jquery-3.3.1.min.js\"></script>  \n");
-      out.write("        <script type=\"text/javascript\" src=\"../../js/materialize.min.js\"></script> \n");
+      out.write("           <script type=\"text/javascript\" src=\"../../js/materialize.min.js\"></script> \n");
       out.write("           <script src=\"../../js/validaciones.js\"></script>\n");
+      out.write("            <script>            \n");
+      out.write("            $(document).ready(function(){\n");
+      out.write("                $('select').formSelect();\n");
+      out.write("            });           \n");
+      out.write("        </script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

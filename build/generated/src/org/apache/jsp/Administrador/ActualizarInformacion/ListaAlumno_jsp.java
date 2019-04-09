@@ -105,7 +105,7 @@ public final class ListaAlumno_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        \n");
       out.write("        <div class=\"container\">\n");
       out.write("        <table class=\"highlight centered\"><thead>\n");
-      out.write("            <tr><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>\n");
+      out.write("                <tr><th>Nombre</th><th>Paterno</th><th>Materno</th><th></th></tr>\n");
       out.write("            </thead>\n");
       out.write("            <tbody>\n");
       out.write("            ");

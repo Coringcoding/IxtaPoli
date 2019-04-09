@@ -19,3 +19,18 @@ nav{
 table{
     background-color: #F1F1F1;
 }
+
+thead{
+    background: linear-gradient(to right, #880000, #190a05);
+    color: white;
+}
+
+
+.dropdown-content li>span {
+    color: black;
+}
+
+.dropdown-content li>span:hover {
+    color: white;
+    background: linear-gradient(to right, #880000, #190a05);
+}

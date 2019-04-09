@@ -6,8 +6,7 @@
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          <link rel="stylesheet" href="../../css/materialize.min.css">
          <link type="text/css" rel="stylesheet" href="../../css/actividades.css">
-         <link type="text/css" rel="stylesheet" href="../../css/menuAlumno.css">
-         
+          <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     </head>
        <nav>
             <a href="#" class="brand-logo center">Ixtapoli Virtual</a>
@@ -28,30 +27,33 @@
           </ul>
         
         <main>
-        <div class="row" id="imagenes">
-            
-            <a href="../../Alumno/Calendario/Calendario.jsp">
-            <div id="calendario" class="col l3">
+            <div class="row" id="imagenes">
+            <div class="col s12">   
+            <a href="../Calendario/Calendario.jsp">
+            <div id="cartas" class="col s3">
                     <img class="responsive-img" src="../../img/calendario.jpg" alt="">
                 Calendario
             </div></a>
            
-          <a href="../../Coordinador/Actividades/Actividades.jsp">
-              <div id="faena" class="col l3 offset-l1">
+          <a href="">
+              <div id="cartas" class="col s3">
                     <img class="responsive-img" src="../../img/equipos.jpg" alt="">
                  Equipos de Actividades            
             </div></a>
             
-            <a href=""><div id="seguimiento" class="col l3 offset-l1">
+            <a href="../Recorrido/SeguimientoRecorrido.jsp">
+                <div id="cartas" class="col s3">
                     <img class="responsive-img" src="../../img/recorrido.jpg" alt="">
                 Seguimiento de Recorrido
                 </div></a>
             
-            <a href="../../Coordinador/Reportes/GenerarReporte.jsp"><div id="seguimiento" class="col l3 offset-l1">
+            <a href="../../Coordinador/Reportes/GenerarReporte.jsp">
+                <div id="cartas" class="col s3">
                     <img class="responsive-img" src="../../img/Baja.jpg" alt="">
                 Generar Reporte
                 </div></a>
       </div>
+        </div>
         </main>
         
          <script src="../../js/jquery-3.3.1.min.js"></script>

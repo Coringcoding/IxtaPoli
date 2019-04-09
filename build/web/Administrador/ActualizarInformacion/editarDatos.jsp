@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <link rel="stylesheet" type="text/css" href="../../css/administrador.css">
+        <link rel="stylesheet" type="text/css" href="../../css/registrar.css">
         <title>Editar Datos</title>
     </head>
     <%
@@ -30,6 +30,7 @@
             alu.setPromedio(Float.parseFloat(ESAPI.encoder().encodeForHTML(request.getParameter("promedio"))));
             alu.setUsr(ESAPI.encoder().encodeForHTML(request.getParameter("usuario")));
             alu.setContra(ESAPI.encoder().encodeForHTML(request.getParameter("contra")));
+            alu.setTipous(Integer.parseInt(ESAPI.encoder().encodeForHTML(request.getParameter("TipoUs"))));
             if(admon.actualizarDatos(alu)){
                 out.print("<script>alert('Datos Actualizados'); window.location.replace('ListaAlumno.jsp');</script>");
             }else{
@@ -106,23 +107,38 @@
                     </div>
                     
                     <div class="row">
-                        <button class="btn waves-effect waves-light  red darken-4 col l3 offset-l6 input-field" type="submit" name="bot" value="actualizar">
+                    <div class="input-field col l6">
+                        <select name="TipoUs" id="TipoUs" class="form-control">
+                            <%
+                                if(a.getTipous() == 0){
+                                    out.print("<option value=\"0\" selected>Alumno</option><option value=\"1\">Coordinador</option>");
+                                }else{
+                                    out.print("<option value=\"0\">Alumno</option><option value=\"1\" selected>Coordinador</option>");
+                                }
+                            %>                       
+                        </select>
+                        <label>Tipo de Usuario</label>
+                    </div>
+                    </div>
+                    
+                    <div class="row">
+                        <button class="btn waves-effect waves-light  red darken-4 col l3 offset-l8 input-field" type="submit" name="bot" value="actualizar">
                         Actualizar<i class="material-icons right">send</i>
                         </button>
                     </div>
                     <div class="row"></div>
                 </form>
             </div>
-            
-            <span id="error" style="font-family: Verdana, Arial, Helvetica, sans-serif;
-                font-size: 12pt;color: #CC3300; position:relative;visibility:hidden;">
-                usuario Ocupado ¡¡¡
-            </span>
              </main>
                     
                     
            <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>  
-        <script type="text/javascript" src="../../js/materialize.min.js"></script> 
+           <script type="text/javascript" src="../../js/materialize.min.js"></script> 
            <script src="../../js/validaciones.js"></script>
+            <script>            
+            $(document).ready(function(){
+                $('select').formSelect();
+            });           
+        </script>
     </body>
 </html>
