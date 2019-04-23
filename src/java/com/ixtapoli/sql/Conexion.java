@@ -8,7 +8,7 @@ public class Conexion {
 	private Connection conexion = null;
 	final String MOTOR = "mysql";
 	final String SERVIDOR = "localhost";
-	final String PUERTO = "8080";
+	final String PUERTO = "8084";
 	final String BASE = "Ixtapoli";
 	final String USUARIO = "root";
 	final String CONTRA = "n0m3l0";
@@ -26,7 +26,6 @@ public class Conexion {
 			System.out.println("Conexion exitosa");
 			
 		} catch (Exception e) {
-			
 			e.printStackTrace();
                         System.out.println("Conexion fallida");
 			
