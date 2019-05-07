@@ -14,50 +14,62 @@
         <title>Calendario</title>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Alumno")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+
+         %>
         <nav>
             <a href="#" class="brand-logo center">Calendario de Actividades</a>
             <a href="../../Alumno/LoginAlumno/MenuAlumno.jsp" class="brand-logo left">Ixtapoli</a>
       </nav>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="slide-out" class="sidenav">
-            <li><div class="user-view">
-              <div class="background">
-                <img src="fondoSideNav">
-              </div>
-              <img class="circle" src="images/yuna.jpg">
-              <span class="white-text name">Usuario</span>
-              <a href="#email"><span class="white-text">Ver mi Informacion</span></a>
-            </div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">insert_drive_file</i>Equipos</a></li>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                    <img class="circle" src="../../img/fondoLogins1.jpg">
+              <a href="#email"><span class="white-text">Alumno</span></a>
+            </div></li> 
             <li><div class="divider"></div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">message</i>Mensajes</a></li>
+            <li><a href="../LoginAlumno/MenuAlumno.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="#!" class="white-text"><i class="material-icons white-text">all_inclusive</i>Equipos de Actividades</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Recorrido/SeguimientoRecorrido.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Seguimiento de Recorrido</a></li>
           </ul>
         
         <main>
-            <div id="calendar"></div>
-            
-            <!-- Modal Structure -->
-            <div id="modal" class="modal modal-fixed-footer"><!-- bottom-sheet -->
-              <div class="modal-content">
-                  <h3 id="title"></h3>
-                  <div class="row">
-                      <p id="fecha" class="col l6"></p>
-                      <p id="hora" class="col l6"></p>
-                      <p class="col l4">
-                          Descripción
-                      </p>
-                      <textarea id="descripcion" readonly class="col l8"></textarea>
-                      <p id="ubicacion" class="col l6"></p>
-                      <p id="materiales" class="col l6"></p>
-                      <p id="cupo" class="col l6"></p>
-                  </div>
-              </div>
-                <div class="row">
-              <div class="modal-footer">
-                      <a href="#!" class="modal-close waves-effect waves-red btn-flat col l12" id="cerrar">Aceptar</a>
-              </div>
+            <div class="row">
+                <div id="calendar"></div>
+                
+                <div class="col l5 offset-l6">
+              <div class="card" >
+                 <div class="card-left">
+                     <img src="../../img/ixtapoli.jpg" />
+                   <h4>Información de Faenas</h4>
+                 </div>
+                 <div class="card-right">
+                   <h3 class="card-title" id="title">Selecciona una Faena para mostrar su informaación</h3>
+                   <p id="descripcion">Descripcion:</p>
+                   <p id="ubicacion">Ubicacion:</p>
+                   <p id="materiales">Materiales:</p>
+                   <p id="cupo">Alumnos por Equipo:</p>
+                   <div class="card-meta">
+                           <p><i class="material-icons">date_range</i><span id="fecha">Fecha:</span></p>
+                           <p><i class="material-icons">access_time</i><span id="hora">Hora:</span></p>
+                   </div>
+                   </div>
+                 </div>
+               </div>
+                </div>
+                
             </div>
-            </div>
+             
         </main>
         
         <script src="../../js/jquery-3.3.1.min.js"></script>
@@ -68,13 +80,10 @@
         
         <script>
           function even(calEvent, jsEvent, view){
-              var elem= document.getElementById("modal");
-                var instance = M.Modal.init(elem);
-                instance.open();
-                $("#title").text("Faena: " + calEvent.title); 
-                $("#fecha").text("Fecha: "+calEvent.fecha);
-                $("#hora").text("Hora: "+calEvent.hora);
-                $("#descripcion").text(calEvent.descripcion);
+                $("#title").text(calEvent.title); 
+                $("#fecha").text(calEvent.fecha);
+                $("#hora").text(calEvent.hora);
+                $("#descripcion").text("Descripcion: " + calEvent.descripcion);
                 $("#ubicacion").text("Ubicacion: "+calEvent.ubicacion);
                 $("#materiales").text("Materiales: "+calEvent.materiales);
                 $("#cupo").text("Alumnos por Equipo: "+calEvent.cupo);
@@ -85,8 +94,7 @@
         %>
         <script>
             $(document).ready(function(){
-            $('.modal').modal();
-            $(".fc-prev-button, .fc-next-button").attr('class', 'waves-effect waves-light btn red darken-4 btn-flat');
+            $(".fc-prev-button, .fc-next-button").attr('class', 'waves-effect waves-light btn flecha btn-flat');
             $("#calendar").fullCalendar("option", "contentHeight",400);
             $('.sidenav').sidenav();
             });

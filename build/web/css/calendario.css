@@ -4,18 +4,15 @@ body{
     font-family: Abel;
 }
 #calendar{
-    width: 40%;
+    width: 40vw;
+    height: 20vw;
     position: absolute;
     top: 15%;
-    left: 30%;
-    
+    left: 5%;
 }
-#title{
-    background-color: #b71c1c;
-    color: white;
-}
+
 .fc-toolbar, .fc-header-toolbar{
-    background-color: #b71c1c;
+    background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
     color: white;
     font-size: 1vw;
 }
@@ -24,7 +21,7 @@ body{
 }
 
 .fc, .fc-unthemed, .fc-ltr{
-    background-color: #b71c1c;
+    background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
 }
 .fc-left > button{
     position: absolute;
@@ -71,3 +68,127 @@ main {
       position: absolute;
   }
   
+  
+  .card {
+  box-shadow: 0px 0px 16px -8px rgba(0,0,0,1);
+  border-radius:5px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;;
+  
+}
+
+.card-left {
+  background-image: linear-gradient(180deg,#900C3F,#4F011F,#900C3F);
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.card-right {
+  padding: 0 20px;
+  text-align: justify;
+  display:flex;
+  flex-direction: column;
+}
+
+.card-meta {
+  display:flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-left img {
+  margin: 20px 0;
+}
+.card-left span {
+  text-align: center;
+  font-size: 12px;
+}
+
+.card-link {
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 12px; 
+}
+
+img{
+    border-radius: 50%;
+    height: 100px;
+    padding-right: 15px;
+}
+
+.flecha{
+    background-color: #eee
+}
+
+.fc-day-grid-event fc-h-event fc-event fc-start fc-end{
+    background-color: #eee
+}
+
+#actividadForm{
+    top:15%;
+    height: 75vh;
+    background-color: #ffffff;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 15px;
+}
+
+input-field input[type=text]:focus + label{
+ color: #880000 !important;
+}
+
+.input-field input[type=text]:focus, .input-field input[type=number]:focus, .input-field input[type=password]:focus, textarea:focus{
+ border-bottom: 1px solid #D20051 !important;
+ box-shadow: 0 1px 0 0 #D20051 !important;
+}
+
+label{
+    color: black !important;
+}
+input[type=text],input[type=password], input[type=number], textarea{
+    border-color: #D20051!important;
+}
+
+#agregarBtn{
+background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);
+position: relative;
+top: 5vh;
+}
+
+.datepicker-date-display{
+    background: linear-gradient(to right,#4F011F,#900C3F);
+}
+
+.timepicker-digital-display{
+    background: linear-gradient(to right,#4F011F,#900C3F);
+}
+
+.datepicker-day-button{
+    color : #4F011F;
+}
+.confirmation-btns > button {
+    color : #4F011F;
+    padding-right: 20px;
+}
+
+timepicker-dial timepicker-hours{
+    
+}
+
+.datepicker-table td.is-selected {
+    background-color: #4F011F;
+    
+}

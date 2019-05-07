@@ -15,25 +15,36 @@ API KEY=AIzaSyCAT88KtR8yE1yXKaj4uW_8N3l7BaVb-zI
         <title>Seguimiento de Recorrido</title>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Coordinador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+         %>
         <nav>
             <a href="#" class="brand-logo center">Seguimiento de recorrido</a>
             <a href="../../Alumno/LoginAlumno/MenuAlumno.jsp" class="brand-logo left">Ixtapoli</a>
       </nav>
         
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="slide-out" class="sidenav">
-            <li><div class="user-view">
-              <div class="background">
-                <img src="fondoSideNav">
-              </div>
-              <img class="circle" src="images/yuna.jpg">
-              <span class="white-text name">Usuario</span>
-              <a href="#email"><span class="white-text">Ver mi Informacion</span></a>
-            </div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">insert_drive_file</i>Equipos</a></li>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                        <img class="circle" src="../../img/fondoRegistro.jpg">
+              <a href="#email"><span class="white-text">Coordinador</span></a>
+            </div></li> 
             <li><div class="divider"></div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">message</i>Mensajes</a></li>
-          </ul>
+            <li><a href="../LoginCoordinador/MenuCoordinador.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="#!" class="white-text"><i class="material-icons white-text">all_inclusive</i>Equipos de Actividades</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Calendario/Calendario.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Calendario</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Reportes/GenerarReporte.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Generar Reporte</a></li>
+        </ul>
         
         <main>
             <div class="row">

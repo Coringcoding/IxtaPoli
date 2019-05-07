@@ -321,3 +321,11 @@ END**
 
 delimiter ;
 
+
+delimiter **
+drop procedure if exists ObtenerTipoUs**
+create procedure ObtenerTipoUs(in usr nvarchar(45))
+BEGIN	
+	select * from AlumnoTipo where usuario = usr;
+END**
+delimiter ;

@@ -79,3 +79,9 @@ button{
 #formregistroAl{
     background: #eee
 }
+
+#formregistroAlu{
+    background: #eee;
+    position: relative;
+    top: 10vh;
+}

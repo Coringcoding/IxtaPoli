@@ -73,7 +73,7 @@ public class agregaFaena extends HttpServlet {
             
             if(cord.registrarFaena(f)){
                 out.println("<script>alert('faena agregada');"
-                        + "window.location.replace('Alumno/Calendario/Calendario.jsp');</script>");
+                        + "window.location.replace('Coordinador/Calendario/Calendario.jsp');</script>");
             }else{
                 out.println("<script>alert('error al registrar faena');</script>");
             }

@@ -162,10 +162,12 @@ from relAlumnoReporte as r
 inner join alumno as a on r.idAlumno = a.idAlumno
 inner join reporte as e on r.idReporte = e.idReporte; 
 
-create view Solicitud as
-select a.nombre, a.paterno,a.materno, a.escuela, a.promedio, a.domicilio,  a.usuario, a.ruta as idRuta, b.nombre as ruta, r.idRelEstadoAlumno,  e.estatus
-from relEstadoAlumno as r
+
+create view AlumnoTipo as
+select a.nombre, a.paterno,a.materno,a.usuario, t.tipo
+from relAlumnoTipoUs as r
 inner join alumno as a on r.idAlumno = a.idAlumno
-inner join estado as e on r.idEstado = e.idEstado
-inner join bus as b on a.ruta = b.idBUs;
+inner join tipoUsuario as t on r.idTipoUsuario = t.idTipoUsuario;
+
+
  

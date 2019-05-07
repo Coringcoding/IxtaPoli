@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.owasp.esapi.ESAPI;
 
 /**
@@ -38,7 +39,7 @@ public class IngresarAdministrador extends HttpServlet {
             try (PrintWriter out = response.getWriter()) {    
         
                 String Usuario = ESAPI.encoder().encodeForHTML(request.getParameter("usuario"));
-                String Contraseña = ESAPI.encoder().encodeForHTML(request.getParameter("contraseña"));
+                String Contra = ESAPI.encoder().encodeForHTML(request.getParameter("contra"));
                 String Clave = ESAPI.encoder().encodeForHTML(request.getParameter("clave"));
                 
                 
@@ -46,7 +47,7 @@ public class IngresarAdministrador extends HttpServlet {
                 Administrador s = new Administrador();
                 
                 s.setUsr(Usuario);
-                s.setContra(Contraseña);
+                s.setContra(Contra);
                 if(Clave.equals("12345")){
                     try{
 
@@ -55,6 +56,8 @@ public class IngresarAdministrador extends HttpServlet {
                         boolean sesion= n.iniciarSesion(s);
 
                         if(sesion==true){
+                            HttpSession ses = request.getSession();
+                            ses.setAttribute("usuario", "Administrador");
                              out.println("<script>window.location.replace('Administrador/menuAdmon.jsp');</script>");
                         }
                         else{

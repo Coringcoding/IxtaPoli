@@ -41,6 +41,15 @@
         %>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Administrador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+         %>
         <script>
             function aceptarSoli(i, e){
                 var tr = document.getElementById("tr"+i);
@@ -77,6 +86,21 @@
         <nav>
             <a href="#" class="brand-logo left">Solicitudes</a>
       </nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                    <img class="circle" src="../../img/fondoLogins.jpg">
+              <a href="#email"><span class="white-text">Administrador</span></a>
+            </div></li> 
+            <li><div class="divider"></div></li>
+            <li><a href="../menuAdmon.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../DarBaja/baja.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Dar de Baja</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../ActualizarInformacion/ListaAlumno.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Actualizar Informacion</a></li>
+          </ul>
+        
         <main>
         
         <div class="row">
@@ -92,7 +116,7 @@
                         + "<tr id='prom"+i+"'><td>Promedio:</td><td colspan='2'>"+sol.get(i).getPromedio()+"</td></tr>"        
                         + "<tr id='dom"+i+"'><td>Domicilio:</td><td colspan='2'>"+sol.get(i).getDomicilio()+"</td></tr>"
                         + "<tr id='usr"+i+"'><td>Usuario:</td><td colspan='2'>"+sol.get(i).getUsr()+"</td><td id='tr"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"'  onclick='aceptarSoli("+i+", 2);'>Rechazar</td></tr>"
-                        + "<tr id='rut"+i+"'><td>Ruta:</td><td colspan='2'>"+sol.get(i).getRuta()+"</td><td id='tre"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"'  onclick='aceptarSoli("+i+", 1);'>Aceptar Solicitud</td></tr>"
+                        + "<tr id='rut"+i+"'><td>Ruta:</td><td colspan='2'>"+sol.get(i).getRutaS()+"</td><td id='tre"+i+"' data-ids='"+sol.get(i).getIdSolicitud()+"'  onclick='aceptarSoli("+i+", 1);'>Aceptar Solicitud</td></tr>"
                         + "</tr>");
                 }
             %>
@@ -113,5 +137,10 @@
                        ocultar(i);
                 }
         </script>
+        <script>
+             $(document).ready(function(){
+                $('.sidenav').sidenav();
+                });
+         </script>
     </body>
 </html>

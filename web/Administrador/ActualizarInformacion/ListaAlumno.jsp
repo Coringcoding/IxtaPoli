@@ -19,6 +19,17 @@
         %>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Administrador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+
+         %>
+        
         <script>
             function edit(i){
                 var tr = document.getElementById("tr"+i);
@@ -51,6 +62,20 @@
         <nav>
             <a href="#" class="brand-logo left">Actualizar Informacion</a>
       </nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                    <img class="circle" src="../../img/fondoLogins.jpg">
+              <a href="#email"><span class="white-text">Administrador</span></a>
+            </div></li> 
+            <li><div class="divider"></div></li>
+            <li><a href="../menuAdmon.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Solicitudes/solicitudes.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Solicitudes</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../DarBaja/baja.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Dar de Baja</a></li>
+          </ul>
         
         <main>
         
@@ -85,5 +110,10 @@
                        ocultar(i);
                 }
         </script>
+        <script>
+             $(document).ready(function(){
+                $('.sidenav').sidenav();
+                });
+         </script>
     </body>
 </html>

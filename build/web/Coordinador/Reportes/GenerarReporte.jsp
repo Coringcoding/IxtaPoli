@@ -10,15 +10,42 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../../css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/solicitudes.css">
         <title>Generar Reporte</title>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Coordinador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+         %>
         <nav>
             <a href="#" class="brand-logo left">Generar Reporte</a>
       </nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                        <img class="circle" src="../../img/fondoRegistro.jpg">
+              <a href="#email"><span class="white-text">Coordinador</span></a>
+            </div></li> 
+            <li><div class="divider"></div></li>
+            <li><a href="../LoginCoordinador/MenuCoordinador.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="#!" class="white-text"><i class="material-icons white-text">all_inclusive</i>Equipos de Actividades</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Recorrido/SeguimientoRecorrido.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Seguimiento de Recorrido</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Calendario/Calendario.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Calendario</a></li>
+        </ul>
+        
         
         <main>
         
@@ -87,6 +114,7 @@
             }
              $(document).ready(function(){
             $('select').formSelect();
+            $('.sidenav').sidenav();
                  });
         </script>
     </body>

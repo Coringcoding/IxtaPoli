@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.owasp.esapi.ESAPI;
 
 @WebServlet(name = "IngresarAlumno", urlPatterns = {"/IngresarAlumno"})
@@ -23,19 +24,31 @@ public class IngresarAlumno extends HttpServlet {
         
         s.setUsr(usuario);
         s.setContra(contra);
-        
+        HttpSession ses = request.getSession();
+                            
         try {
             alumnoImpDao n = new alumnoImpDao();
             boolean marca = n.iniciarSesion(s);
             String estatus = n.obtenerEstado(s.getUsr());
-            if (marca == true && estatus.equalsIgnoreCase("espera")) {
+            String tipo = n.ObtenerTipo(s.getUsr());
+            if(tipo.equalsIgnoreCase("Alumno")){
+                if (marca == true && estatus.equalsIgnoreCase("espera")) {
                 response.sendRedirect("Alumno/LoginAlumno/Espera.jsp");
             }else if(marca == true && estatus.equalsIgnoreCase("Aceptado")) {
+                ses.setAttribute("usuario", "Alumno");
                 response.sendRedirect("Alumno/LoginAlumno/MenuAlumno.jsp");
             }else if(marca == true && estatus.equalsIgnoreCase("Rechazado")) {
                 response.sendRedirect("Alumno/LoginAlumno/Rechazado.jsp");
             }else
                 response.sendRedirect("Alumno/LoginAlumno/RegistrarAlumno.jsp?msj=6OR6wwKavbbw91rFr2krlmey2TQKZzopgeuPU+Z0o7rt3OSOoO0jLdnL7QPuIDHVjXp8lMFDYdgjHUAEDh3QOQ");
+            }else{
+                if(marca){
+                    response.sendRedirect("Coordinador/LoginCoordinador/MenuCoordinador.jsp");
+                    ses.setAttribute("usuario", "Coordinador");
+                }else
+                    response.sendRedirect("Alumno/LoginAlumno/LoginAlumno.jsp");
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

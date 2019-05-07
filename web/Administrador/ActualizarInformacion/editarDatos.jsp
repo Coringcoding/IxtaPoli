@@ -45,6 +45,16 @@
         
     %>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Administrador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+
+         %>
            <nav>
         <div>
             <a href="#" class="brand-logo center">Actualizar Informacion</a>
@@ -53,41 +63,41 @@
         
         <main>
             <div class="row">           
-                <form action="" method="post" class="col l8 offset-l2" id="formregistroAl" name="editar" onsubmit="return valReg('formregistroAl');">
+                <form action="" method="post" class="col l8 offset-l2" id="formregistroAlu" name="editar" onsubmit="return valReg('formregistroAlu');">
                     <div id="namA">Alumno</div>
                     <input  type="hidden" id="idAlumno" name="idAlumno" value="<%=a.getId()%>">
                     
                     <div class="row">
                     <div class="input-field col l6">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" value="<%=a.getNombre()%>">
+                    <input type="text" id="nombre" name="nombre" value="<%=a.getNombre()%>" required="" autocomplete="off" maxlength="45" onkeypress="Letras(event);">
                     </div>
                     <div class="input-field col l6">
                     <label for="paterno">Apellido Paterno:</label>
-                    <input type="text" id="paterno" name="paterno" value="<%=a.getPaterno()%>">
+                    <input type="text" id="paterno" name="paterno" value="<%=a.getPaterno()%>" required="" autocomplete="off" maxlength="45" onkeypress="Letras(event);">
                     </div>
                     </div>
                     
                     <div class="row">
                     <div class="input-field col l6">
                     <label for="materno">Apellido Materno:</label>
-                    <input type="text" id="materno" name="materno" value="<%=a.getMaterno()%>">
+                    <input type="text" id="materno" name="materno" value="<%=a.getMaterno()%>" required="" autocomplete="off" maxlength="45" onkeypress="Letras(event);">
                     </div>
                     <div class="input-field col l6">
                     <label for="escuela">Escuela:</label>
-                    <input type="text" id="escuela" name="escuela" value="<%=a.getEscuela()%>">
+                    <input type="text" id="escuela" name="escuela" value="<%=a.getEscuela()%>" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>     
                     </div>
                     
                     <div class="row">
                     <div class="input-field col l6">
                     <label for="domicilio">Domicilio:</label>
-                    <input type="text" id="domicilio" name="domicilio" value="<%=a.getDomicilio()%>">
+                    <input type="text" id="domicilio" name="domicilio" value="<%=a.getDomicilio()%>" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>
                     
                     <div class="input-field col l6">
                     <label for="promedio">Promedio:</label>
-                    <input type="text" step="0.01" id="promedio" name="promedio" value="<%=a.getPromedio()%>">
+                    <input type="number" step="0.01" id="promedio" name="promedio" value="<%=a.getPromedio()%>" required="" min="0" max="10">
                     </div>
                     </div>  
                     
@@ -95,14 +105,7 @@
                     
                     <div class="input-field col l6">
                     <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario" value="<%=a.getUsr()%>">
-                    </div>
-                    </div>
-                    
-                    <div class="row">    
-                    <div class="input-field col l6">
-                    <label for="contra">Contraseña:</label>
-                    <input type="text" id="contra" name="contra" value="<%=a.getContra()%>">
+                    <input type="text" id="usuario" name="usuario" value="<%=a.getUsr()%>" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>
                     </div>
                     
@@ -120,6 +123,8 @@
                         <label>Tipo de Usuario</label>
                     </div>
                     </div>
+                        
+                     <input type="hidden" id="contra" name="contra" value="<%=a.getContra()%>">
                     
                     <div class="row">
                         <button class="btn waves-effect waves-light  red darken-4 col l3 offset-l8 input-field" type="submit" name="bot" value="actualizar">

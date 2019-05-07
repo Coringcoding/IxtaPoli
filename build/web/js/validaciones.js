@@ -5,12 +5,13 @@ function validar(idForm){
     for(i=0; i< inputs.length; i++){
     if (inputs[i].value === ""){
         band = false;
-            Swal.fire("Llene todos los campos");
+            alert("Llene todos los campos");
             break;
         }
     }
     return band;
 }
+
 function valcontra(){
     var bandera = false;
     var con1 = document.getElementById("contra").value;
@@ -32,4 +33,25 @@ function valReg(idForm){
         bandera = true;
     }
     return bandera;
+}
+
+function LetrasNumeros(event){
+    var x = event.keyCode;
+    if(!((x>47 && x<58) || (x>64 && x<91) || (x>96 && x<123))){
+        event.returnValue = false;
+    }
+}
+
+function Letras(event){
+    var x = event.keyCode;
+    if(!((x>64 && x<91) || (x>96 && x<123))){
+        event.returnValue = false;
+    }
+}
+
+function Numeros(event){
+    var x = event.keyCode;
+    if(!((x>47 && x<58))){
+        event.returnValue = false;
+    }
 }

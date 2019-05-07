@@ -45,48 +45,46 @@
         <main>
             <div class="row">
              <form method="get" id="formregistro" action="RegistroAdministrador.jsp" onsubmit="return valReg('formregistro');" class="col s12">
-            
             <div class="row">
             <div class="input-field col l6">
-                <input id="nombre" name="nombre" type="text" class="validate">
+                <input id="nombre" name="nombre" type="text" class="validate" required="" onkeypress="Letras(event);" maxlength="45" autocomplete="off">
                 <label for="nombre">Nombre</label>
             </div>
             <div class="input-field col l6">
-                <input id="paterno" name="paterno" type="text" class="validate">
+                <input id="paterno" name="paterno" type="text" class="validate" required="" onkeypress="Letras(event);" maxlength="45" autocomplete="off">
                 <label for="paterno">Paterno</label>
             </div>
             </div>
-            
             <div class="row">
             <div class="input-field col l6">
-                <input id="materno" name="materno" type="text" class="validate">
+                <input id="materno" name="materno" type="text" class="validate" required="" onkeypress="Letras(event);" maxlength="45" autocomplete="off">
                 <label for="materno">Materno</label>
             </div>
             <div class="input-field col l6">
-                <input id="edad" name="edad" type="number" class="validate">
+                <input id="edad" name="edad" type="number" class="validate" required="" step="1" min="12" max="99" >
                 <label for="edad">Edad</label>
             </div>
             </div>
             
             <div class="row">
             <div class="input-field col l6">
-                <input id="telefono" name="telefono"  type="text" class="validate">
+                <input id="telefono" name="telefono"  type="text" class="validate" required="" onkeypress="Numeros(event);" maxlength="45" autocomplete="off">
                 <label for="telefono">Telefono</label>
             </div>
             <div class="input-field col l6">
                 <div id="validacion"></div>
-                <input id="usuario" name="usuario" type="text" class="validate" onblur="existencia()">
+                <input id="usuario" name="usuario" type="text" class="validate" onblur="existencia()" required="" onkeypress="LetrasNumeros(event);" maxlength="45" autocomplete="off">
                 <label for="usuario">Usuario</label>
             </div>
             </div>
             
             <div class="row">
             <div class="input-field col l6">
-                <input id="contra" name="contra" type="password" class="validate">
+                <input id="contra" name="contra" type="password" class="validate" required="" onkeypress="LetrasNumeros(event);" maxlength="45" autocomplete="off">
                 <label for="contra">Contraseña</label>
             </div>
             <div class="input-field col l6">
-                <input id="confcontra" name="confcontra" type="password" class="validate">
+                <input id="confcontra" name="confcontra" type="password" class="validate" required="" onkeypress="LetrasNumeros(event);" maxlength="45" autocomplete="off">
                 <label for="confcontra">Confirmar Contraseña</label>
             </div>
                 </div>

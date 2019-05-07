@@ -80,13 +80,20 @@ public class ixtaws {
                     json.addProperty("mes", fechas[1]);
                     json.addProperty("dia", fechas[2]);
                     json.addProperty("hora", faena.get(i).getHoraInicio());
+                    json.addProperty("horaE", faena.get(i).getHoraInicio().substring(0,2));
+                    json.addProperty("minutoE", faena.get(i).getHoraInicio().substring(3,5));
+                    if(faena.get(i).getHoraInicio().substring(6).equalsIgnoreCase("AM")){
+                    json.addProperty("tiempoE","0");
+                    }else{
+                    json.addProperty("tiempoE","1");
+                    }
                     json.addProperty("descripcion", faena.get(i).getDescripcion());
                     json.addProperty("ubicacion", faena.get(i).getUbicacion());
                     json.addProperty("materiales",faena.get(i).getMateriales());
                     json.addProperty("cupo", faena.get(i).getCupo());
                     //json.addProperty("color", "#880000");
                     
-                   jarr.add(json);
+                    jarr.add(json);
                 }
             System.out.println(jarr.toString());
         

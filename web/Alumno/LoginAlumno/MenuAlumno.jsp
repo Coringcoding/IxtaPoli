@@ -10,22 +10,28 @@
          
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Alumno")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+
+         %>
        <nav>
             <a href="#" class="brand-logo center">Ixtapoli Virtual</a>
         </nav>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="slide-out" class="sidenav" style="background-color:#4F011F">
-            <li><div class="user-view">
-              <div class="background">
-                <img src="fondoSideNav">
-              </div>
-              <img src="images/yuna.jpg">
-              <span class="white-text name">Usuario</span>
-              <a href="#email"><span class="white-text">Ver mi Informacion</span></a>
-            </div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">insert_drive_file</i>Solicitudes de Equipos</a></li>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                        <img class="circle" src="../../img/fondoLogins1.jpg">
+              <a href="#email"><span class="white-text">Alumno</span></a>
+            </div></li> 
             <li><div class="divider"></div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">message</i>Mensajes</a></li>
+            <li><a href="../../index.html" class="white-text"><i class="material-icons white-text">supervisor_account</i>Cerrar Sesion</a></li>
           </ul>
         
         <main>

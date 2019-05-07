@@ -36,28 +36,28 @@
                     <div class="row">
                     <div class="input-field col l6">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre" required="" autocomplete="off" maxlength="45" onkeypress="Letras(event);">
                     </div>
                     <div class="input-field col l6">
                     <label for="paterno">Apellido Paterno:</label>
-                    <input type="text" name="paterno" id="paterno">
+                    <input type="text" name="paterno" id="paterno" required="" autocomplete="off" maxlength="45" onkeypress="Letras(event);">
                     </div>
                     </div>
                     
                     <div class="row">
                     <div class="input-field col l6">
                     <label for="materno">Apellido Materno:</label>
-                    <input type="text" name="materno" id="materno">
+                    <input type="text" name="materno" id="materno" required="" autocomplete="off" maxlength="45" onkeypress="Letras(event);">
                     </div>
                     <div class="input-field col l6">
                     <label for="escuela">Escuela:</label>
-                    <input type="text" name="escuela" id="escuela">
+                    <input type="text" name="escuela" id="escuela" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>     
                     </div>
                     
                     <div class="row">
                     <div class="input-field col l6">
-                        <select name="ruta" id="ruta" class="form-control">
+                        <select name="ruta" id="ruta" class="form-control" required="">
                             <option value="" disabled selected>Escoge una opcion</option>
                             <option value="1">Zacatenco</option>
                             <option value="2">Santo Tomas</option>                            
@@ -66,28 +66,27 @@
                     </div>
                     <div class="input-field col l6">
                     <label for="domicilio">Domicilio:</label>
-                    <input type="text" name="domicilio" id="domicilio">
+                    <input type="text" name="domicilio" id="domicilio" required="" autocomplete="off" maxlength="100" onkeypress="LetrasNumeros(event);">
                     </div>
                     </div>
                     
                     <div class="row">    
                     <div class="input-field col l6">
                     <label for="promedio">Promedio:</label>
-                    <input type="number" name="promedio" id="promedio">
+                    <input type="number" name="promedio" id="promedio" min="0" step=".01" required="" max="10">
                     </div>
                     <div class="input-field col l6">
                     <label for="usuario">Usuario:</label>
-                    <input type="text" name="usuario" id="usuario" onchange="return autentica();">
+                    <input type="text" name="usuario" id="usuario" onchange="return autentica();" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>
                     </div>
-                    
                     <div class="row">    
                     <div class="input-field col l6">
                     <label for="contra">Contraseña:</label>
-                    <input type="password" name="contra" id="contra">
+                    <input type="password" name="contra" id="contra" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>
                       <div class="input-field col l6">
-                    <input id="confcontra" name="confcontra" type="password" class="validate">
+                    <input id="confcontra" name="confcontra" type="password" class="validate" required="" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     <label for="confcontra">Confirmar Contraseña</label>
                      </div>
                     </div>

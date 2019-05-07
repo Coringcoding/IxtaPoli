@@ -69,9 +69,5 @@ public class Alumno extends Usuario {
         public void setTipous(int tipous) {
             this.tipous = tipous;
         }
-        
-        
-        
-        
-	        
+                
 }

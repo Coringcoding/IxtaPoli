@@ -10,7 +10,16 @@
                 
     </head>
         
-    <body style="background-image: url(../..//img/fondo.jpg);background-size: cover;">    
+    <body style="background-image: url(../..//img/fondo.jpg);background-size: cover;"> 
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Coordinador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+         %>
     <nav id="nav" style="position: absolute; height: 15%"><h4>Agregar Actividad</h4></nav>
         
         <div class="row" id="actividadForm" >

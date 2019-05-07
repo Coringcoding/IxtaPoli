@@ -11,15 +11,41 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../../css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/solicitudes.css">
         <title>Dar de Baja</title>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Administrador")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+
+         %>
         <nav>
             <a href="#" class="brand-logo left">Dar de Baja </a>
       </nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                    <img class="circle" src="../../img/fondoLogins.jpg">
+              <a href="#email"><span class="white-text">Administrador</span></a>
+            </div></li> 
+            <li><div class="divider"></div></li>
+            <li><a href="../menuAdmon.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Solicitudes/solicitudes.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Solicitudes</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../ActualizarInformacion/ListaAlumno.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Actualizar Informacion</a></li>
+          </ul>
+        
         <main>
         
         <%
@@ -107,7 +133,9 @@
             
              $(document).ready(function(){
             $('select').formSelect();
+            $('.sidenav').sidenav();
                  });
         </script>
+
     </body>
 </html>

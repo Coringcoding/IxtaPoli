@@ -15,24 +15,33 @@ API KEY=AIzaSyCAT88KtR8yE1yXKaj4uW_8N3l7BaVb-zI
         <title>Seguimiento de Recorrido</title>
     </head>
     <body>
+        <%
+                //Sesion
+                HttpSession ses =request.getSession();
+                String sesu = (String)ses.getAttribute("usuario");
+                if(!sesu.equalsIgnoreCase("Alumno")){
+                    out.print("<script>alert('Sesion Incorrecta');"
+                            + "window.location.href='../../index.html'</script>");
+                }
+         %>
         <nav>
             <a href="#" class="brand-logo center">Seguimiento de recorrido</a>
             <a href="../../Alumno/LoginAlumno/MenuAlumno.jsp" class="brand-logo left">Ixtapoli</a>
       </nav>
         
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="slide-out" class="sidenav">
-            <li><div class="user-view">
-              <div class="background">
-                <img src="fondoSideNav">
-              </div>
-              <img class="circle" src="images/yuna.jpg">
-              <span class="white-text name">Usuario</span>
-              <a href="#email"><span class="white-text">Ver mi Informacion</span></a>
-            </div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">insert_drive_file</i>Equipos</a></li>
+         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav" style="background: linear-gradient(to right,#900C3F,#4F011F,#900C3F);">
+            <li><div class="user-view" style="color: white;">
+                        IXPOLI-GIEBPROJECTS
+                    <img class="circle" src="../../img/fondoLogins1.jpg">
+              <a href="#email"><span class="white-text">Alumno</span></a>
+            </div></li> 
             <li><div class="divider"></div></li>
-            <li><a href="#!" class="white-text"><i class="material-icons white-text">message</i>Mensajes</a></li>
+            <li><a href="../LoginAlumno/MenuAlumno.jsp" class="white-text"><i class="material-icons white-text">apps</i>Menu</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="#!" class="white-text"><i class="material-icons white-text">all_inclusive</i>Equipos de Actividades</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="../Calendario/Calendario.jsp" class="white-text"><i class="material-icons white-text">all_inclusive</i>Calendario</a></li>
           </ul>
         
         <main>

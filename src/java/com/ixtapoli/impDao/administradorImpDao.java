@@ -67,7 +67,7 @@ public class administradorImpDao implements iAdministradorDao{
                 s.setPromedio(res.getFloat("promedio"));
                 s.setDomicilio(res.getString("domicilio"));
                 s.setUsr(res.getString("usuario"));
-                s.setRuta(0);res.getString("ruta");
+                s.setRutaS(res.getString("ruta"));
                 solicitudes.add(s);
                 }
             }

@@ -19,23 +19,23 @@
         
     <main>
         
-        <form action="../IngresarAdministrador" id="formLoginA">
+        <form action="../IngresarAdministrador" id="formLoginA" onsubmit="return validar('formLoginA');" method="post">
             <div><h4>Administrador</h4></div>
             <div class="input-field">
-                <input id="clave" name="clave" type="text" class="validate" class="required number" onkeyup="validarClave();" autocomplete="off">
+                <input id="clave" name="clave" type="text" class="validate" class="required number" onkeyup="validarClave();" autocomplete="off" onkeypress="LetrasNumeros(event);">
                 <label for="clave">Clave Especial</label>
             </div>
             <div class="input-field">
-                <input id="usuario" name="usuario" type="text" class="validate" class="required">
+                <input id="usuario" name="usuario" type="text" class="validate" class="required" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                 <label for="usuario">Usuario</label>
             </div>
             <div class="input-field">
-                <input id="contraseña" name="contraseña" type="password" class="validate" class="required">
-                <label for="contraseña">Contraseña</label>
+                <input id="contra" name="contra" type="password" class="validate" class="required" autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
+                <label for="contra">Contraseña</label>
             </div>
             
             <div class="row espacio">
-                <a href="RegistroAdministrador.jsp" Id="linkLoginA" class="col l7 input-field deshabilitar">¿Aún no tienes cuenta?</a>
+                <a href="RegistroAdministrador.jsp" id="linkLoginA" class="col l7 input-field deshabilitar">¿Aún no tienes cuenta?</a>
                 <button class="btn waves-effect waves-light  red darken-4 col l5 input-field" type="submit" name="ingresar" id="ingresar" value="Ingresar" disabled>
                 Ingresar<i class="material-icons right">send</i>
             </button>
@@ -56,6 +56,8 @@
         <script src="../js/jquery-3.3.1.min.js"></script> 
         <script src="../js/materialize.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script src="../js/validaciones.js"></script>
+        
         <script>
              function validarClave(){
           var cl = document.getElementById("clave").value;

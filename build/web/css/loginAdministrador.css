@@ -112,3 +112,10 @@ button{
     min-height: 100vh;
     flex-direction: column;
 }*/
+
+.deshabilitar{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black !important;
+}

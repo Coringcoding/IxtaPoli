@@ -19,6 +19,8 @@ public interface iAlumnoDao extends Dao<Alumno> {
 	public String verCalendario();
         
         public String obtenerEstado(String s);
+        
+        public String ObtenerTipo(String s);
 	
 	//Faltan acciones para las cosas del recorrido
 

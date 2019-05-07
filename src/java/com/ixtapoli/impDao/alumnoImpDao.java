@@ -25,6 +25,7 @@ public class alumnoImpDao implements iAlumnoDao {
         final String CONSULTARFAENAS = "{CALL faena(4,0,'','0000-00-00','','','','',0)}";
         final String INICIARSESION = "{CALL IniciarSesionAlumno(?,?)}";
         final String OBTENERESTADO = "{CALL ObtenerEstado(?)}";
+        final String OBTENERTIPO="{CALL ObtenerTipoUs(?)}";
         	
 	public alumnoImpDao() {
 		
@@ -239,5 +240,24 @@ public class alumnoImpDao implements iAlumnoDao {
         }
         return estado;
     }
+
+    @Override
+    public String ObtenerTipo(String s) {
+        CallableStatement st = null;
+        String tipo="";
+        try {
+            st = cnx.getConexion().prepareCall(OBTENERTIPO);
+            st.setString(1, s);
+            rs = st.executeQuery();
+            while(rs.next()){
+                tipo = rs.getString("tipo");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tipo;
+    }
+    
+   
 
 }

@@ -55,7 +55,5 @@ public class Reporte {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
-    
+  
 }

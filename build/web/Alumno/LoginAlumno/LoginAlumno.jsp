@@ -31,16 +31,16 @@
       </nav>
         
         <main>
-                <form action="../../IngresarAlumno" method="post" class="col l" id="formLoginA">
+                <form action="../../IngresarAlumno" method="post" class="col l" id="formLoginA" onsubmit="return validar('formLoginA');">
                     <div id="tituloFormAlumno"><h4>Alumno</h4></div>
                     
                     <div class="input-field" id="labUs">
                         <label for="usuario" >Usuario</label>
-                        <input class="validate" type="text" name="usuario" id="usuario" required>
+                        <input class="validate" type="text" name="usuario" id="usuario" required autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>
                     <div class="input-field">
                         <label for="contra">Contraseña</label>
-                        <input class="validate" type="password" name="contra" id="contra" required>
+                        <input class="validate" type="password" name="contra" id="contra" required autocomplete="off" maxlength="45" onkeypress="LetrasNumeros(event);">
                     </div>
                     
                     
@@ -68,5 +68,6 @@
         
         <script type="text/javascript" src="../../js/materialize.min.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+        <script src="../../js/validaciones.js"></script>
     </body>
 </html>
